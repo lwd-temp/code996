@@ -1,0 +1,17 @@
+/** $num： 超过几行...表示 */
+@mixin txt_overflow($num) {
+  @if $num==1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  } @else {
+    display: -webkit-box;
+    max-height: 22 * $num + px;
+    overflow: hidden;
+    line-height: 22px;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+  }
+}

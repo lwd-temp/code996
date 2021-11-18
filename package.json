@@ -1,0 +1,24 @@
+{
+  "name": "fire996-web",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@j-t-mcc/vue3-chartjs": "^1.2.0",
+    "chart.js": "^3.5.1",
+    "github-markdown-css": "^5.0.0",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "sass": "^1.43.3",
+    "sass-loader": "^12.2.0",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vue-tsc": "^0.3.0"
+  }
+}

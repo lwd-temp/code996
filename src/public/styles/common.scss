@@ -1,0 +1,50 @@
+.normal-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.large-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.text {
+  font-size: 14px;
+  color: #606266;
+}
+
+.text-btn {
+  cursor: pointer;
+  color: #409eff;
+}
+
+.flex-y-center {
+  display: flex;
+  align-items: center;
+}
+
+@for $i from 1 through 50 {
+  .mr#{$i} {
+      margin-right: (1px * $i);
+  }
+
+  .ml#{$i} {
+      margin-left: (1px * $i);
+  }
+
+  .mt#{$i} {
+      margin-top: (1px * $i);
+  }
+
+  .mb#{$i} {
+      margin-bottom: (1px * $i);
+  }
+}
