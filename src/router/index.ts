@@ -3,13 +3,13 @@ const Intro = () => import('@/view/intro/index.vue')
 const Result = () => import('@/view/result/index.vue')
 
 export const router = createRouter({
-  history: createWebHashHistory('/fire996-web/'),
+  history: createWebHashHistory('/code996-web/'),
   routes: [
     {
       path: '/',
       name: 'index',
       component: Intro,
-      meta: { title: 'FIRE996' },
+      meta: { title: 'CODE996' },
     },
     {
       path: '/result',

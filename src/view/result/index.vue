@@ -1,55 +1,50 @@
 <template>
   <div class="result">
     <div class="wrapper">
+      <div>
+        <h1>这里是标题</h1>
+        <p>标题文案展示：</p>
+        <p>小于6小时：神仙项目</p>
+        <p>8小时：普普通通</p>
+        <p>9小时：勉勉强强</p>
+        <p>10小时：加班可能有点多！！</p>
+        <p>12小时：快跑！！</p>
+        <h2>这里是副标题</h2>
+        <p>这是一个996/955的项目</p>
+      </div>
       <h1>项目分析解读</h1>
       <div>
         <p>分析时间段：2021.01.01 - 2022.01.01</p>
         <p>总 commit 数：326</p>
       </div>
-      <div>
-        <h1>恭喜你，965公司！</h1>
-        <h1>996，快跑！！</h1>
-        <h1>997，快跑！！</h1>
-        <h1>997，快跑！！！</h1>
-      </div>
-      <div>
-        <h1>成就系统</h1>
-        <p>夜猫子成就！</p>
-      </div>
-      <div>一天二十四小时 柱状图</div>
-      <div>一周七天 柱状图</div>
+      <h2>24小时维度数据解读：</h2>
+      <BarChart :data="dayResult" />
+      <h2>周维度数据解读：</h2>
+      <BarChart :data="weekResult" />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { TimeCount } from '../../typings/times'
+import { TimeCount } from '../../typings'
+import BarChart from './components/BarChart.vue'
+import { parseResult, parseWeekData, useWeek } from './utils/time'
 
 const router = useRouter()
 const { query } = router.currentRoute.value
 
-const labels = ref<string[]>([])
-const values = ref<number[]>([])
-
-function parseResult(str: string): TimeCount[] {
-  let list: TimeCount[] = []
-  str.split(',').forEach((item) => {
-    item.replace(/(?<count>\d+)_(?<time>\w+)/g, (...args) => list.push(args[5]))
-  })
-
-  return list
-}
+const dayResult = ref<TimeCount[]>([])
+const weekResult = ref<TimeCount[]>([])
 
 function init() {
-  const hourResult = parseResult(query.hour as string)
-  const dayResult = parseResult(query.day as string)
-  console.log(hourResult, dayResult)
+  const dayData = parseResult(query.day as string)
+  const weekData = parseWeekData(parseResult(query.week as string))
 
-  // result.forEach((item: TimeCount) => {
-  //   labels.value.push(item.time)
-  //   values.value.push(Number(item.count))
-  // })
+  const {} = useWeek(weekData)
+
+  dayResult.value = [...dayData]
+  weekResult.value = [...weekData]
 }
 
 onMounted(() => {

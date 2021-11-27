@@ -2,9 +2,9 @@
   <div class="index">
     <div class="banner">
       <div class="banner-wrapper wrapper">
-        <p class="p1 mb10">FIRE996</p>
+        <p class="p1 mb10">CODE996</p>
         <p class="p2 mb20">
-          fire996是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
+          code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
         <span class="btn" @click="previewDemo">查看示例 ></span>
       </div>
@@ -25,13 +25,13 @@
           <ol>
             <li>如果你拥有 node 环境，可以直接执行 npm 命令</li>
             <pre>
-npx fire996 -o
+npx code996 -o
 或
-npm install fire996 -g
-fire996 -o</pre
+npm install code996 -g
+code996 -o</pre
             >
             <li>其他环境，可以执行以下脚本</li>
-            <pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/test/HEAD/fire996.sh)"</pre>
+            <pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/test/HEAD/code996.sh)"</pre>
           </ol>
         </article>
       </div>
