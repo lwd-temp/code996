@@ -44,9 +44,9 @@ export function parseWeekData(list: TimeCount[]): TimeCount[] {
   })
 }
 
-export function useDay(daysData: TimeCount[]) {
+export function useHour(hourData: TimeCount[]) {
   // commit 总数
-  const totalCount = daysData.reduce((total, item) => total + item.count, 0)
+  const totalCount = hourData.reduce((total, item) => total + item.count, 0)
 
   return {
     totalCount,
@@ -72,10 +72,9 @@ export function useWeek(weekData: TimeCount[]) {
     sunday: getRadio(commitCount.sunday, totalCount),
   }
 
-  console.log(totalCount, commitCount, commitRatio)
-
   return {
     totalCount,
+    commitCount,
     commitRatio,
   }
 }
