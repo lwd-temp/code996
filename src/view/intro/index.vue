@@ -2,17 +2,20 @@
   <div class="index">
     <div class="banner">
       <div class="banner-wrapper wrapper">
-        <p class="p1 mb10">CODE996</p>
-        <p class="p2 mb20">
+        <p class="logo-text mb10">#CODE996</p>
+        <p class="p2 mb40">
           code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
-        <span class="btn" @click="previewDemo">查看示例 ></span>
+        <span class="btn" @click="previewDemo">查看示例</span>
       </div>
     </div>
     <div class="main wrapper">
       <div class="item">
-        <div class="p1">解决的问题</div>
+        <div class="left">
+          <div class="icon-mark">?</div>
+        </div>
         <article class="markdown-body">
+          <div class="p1">解决的问题</div>
           <p>新入职一家公司后，你可能不了解你所在岗位的加班情况。</p>
           <p>也许你面试时问过了面试官，或者在网上查看了某些共享文档，可他们的回答难免包含主观想法……</p>
           <p>但项目代码不会骗人，因此你可以通过一个项目的历史 commit 记录来了解这家公司的加班时间。</p>
@@ -20,9 +23,12 @@
         </article>
       </div>
       <div class="item">
-        <div class="p1">开始使用</div>
+        <div class="left">
+          <div class="icon-mark">@</div>
+        </div>
         <article class="markdown-body">
-          <ol>
+          <div class="p1">开始使用</div>
+          <ul>
             <li>如果你拥有 node 环境，可以直接执行 npm 命令</li>
             <pre>
 npx code996 -o
@@ -32,7 +38,7 @@ code996 -o</pre
             >
             <li>其他环境，可以执行以下脚本</li>
             <pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/test/HEAD/code996.sh)"</pre>
-          </ol>
+          </ul>
         </article>
       </div>
     </div>
@@ -62,43 +68,57 @@ const previewDemo = () => {
     margin: 0 auto;
   }
   .banner {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    height: 380px;
-    width: 100%;
-    background: #1a1a1a;
     &-wrapper {
-      color: #fff;
-      .p1 {
-        font-size: 6em;
-      }
       .p2 {
         font-size: 1.2em;
       }
       .btn {
-        border-bottom: 1px solid;
+        display: inline-block;
         font-size: 1.2em;
-        padding-bottom: 2px;
         cursor: pointer;
+        background-color: #212121;
+        padding: 16px 40px;
+        background-color: #de335e;
+        color: #fff;
+        box-shadow: 0px 0px 0px rgba(255,255,255,0),
+                     10px 10px 0px rgba(0,0,0,.2);
       }
     }
   }
   .main {
-    display: flex;
-    padding-top: 3em;
     .item {
-      flex: 1;
-      max-width: 50%;
-      padding-right: 2em;
-      &:last-child {
-        padding-right: 0;
+      display: flex;
+      padding-bottom: 5em;
+      .left{
+        width: 120px;
+      }
+      .icon-mark{
+        font-size: 3.2em;
+        color: #de335e;
+        font-family: vcr-osd;
+        background-color: #2a2a2a;
+        text-shadow: 0px 0px 0px rgba(255,255,255,0),
+                     5px 5px 0px rgba(0,0,0,.2);
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
       }
       .p1 {
         font-size: 1.6em;
         font-weight: 500;
-        margin-bottom: 1em;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 1.3em;
       }
+    }
+  }
+
+  .markdown-body ul{
+    padding-left: 0;
+    list-style: inside;
+    pre{
+      margin: 1em 0;
     }
   }
 }

@@ -1,6 +1,11 @@
 <template>
   <div class="result">
-    <div class="wrapper">
+    <div class="banner">
+      <div class="wrapper">
+        <p class="logo-text mb10">#CODE996</p>
+      </div>
+    </div>
+    <div class="wrapper main">
       <div>
         <h1>该项目的工作时长为：965</h1>
         <p>这是一个普通项目，你应该会干的比较开心</p>
