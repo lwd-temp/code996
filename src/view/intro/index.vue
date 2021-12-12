@@ -15,11 +15,11 @@
           <div class="icon-mark">?</div>
         </div>
         <article class="markdown-body">
-          <div class="p1">解决的问题</div>
-          <p>新入职一家公司后，你可能不了解你所在岗位的加班情况。</p>
-          <p>也许你面试时问过了面试官，或者在网上查看了某些共享文档，可他们的回答难免包含主观想法……</p>
-          <p>但项目代码不会骗人，因此你可以通过一个项目的历史 commit 记录来了解这家公司的加班时间。</p>
-          <p>你只需要在入职一家公司后，走完入职流程，拉下来你负责的仓库，跑一个命令，即可了解项目的工作强度。</p>
+          <div class="p1">用途</div>
+          <ul>
+            <li>分析你个人项目的提交时间规律</li>
+            <li>在进入一家新公司后快速了解所负责项目是否有在996</li>
+          </ul>
         </article>
       </div>
       <div class="item">
@@ -27,14 +27,12 @@
           <div class="icon-mark">@</div>
         </div>
         <article class="markdown-body">
-          <div class="p1">开始使用</div>
+          <div class="p1">如何使用</div>
           <ul>
             <li>如果你拥有 node 环境，可以直接执行 npm 命令</li>
             <pre>
-npx code996 -o
-或
-npm install code996 -g
-code996 -o</pre
+npx code996
+</pre
             >
             <li>其他环境，可以执行以下脚本</li>
             <pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/test/HEAD/code996.sh)"</pre>
@@ -80,8 +78,7 @@ const previewDemo = () => {
         padding: 16px 40px;
         background-color: #de335e;
         color: #fff;
-        box-shadow: 0px 0px 0px rgba(255,255,255,0),
-                     10px 10px 0px rgba(0,0,0,.2);
+        box-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -89,16 +86,15 @@ const previewDemo = () => {
     .item {
       display: flex;
       padding-bottom: 5em;
-      .left{
+      .left {
         width: 120px;
       }
-      .icon-mark{
+      .icon-mark {
         font-size: 3.2em;
         color: #de335e;
         font-family: vcr-osd;
         background-color: #2a2a2a;
-        text-shadow: 0px 0px 0px rgba(255,255,255,0),
-                     5px 5px 0px rgba(0,0,0,.2);
+        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 5px 5px 0px rgba(0, 0, 0, 0.2);
         width: 80px;
         height: 80px;
         text-align: center;
@@ -114,10 +110,10 @@ const previewDemo = () => {
     }
   }
 
-  .markdown-body ul{
+  .markdown-body ul {
     padding-left: 0;
     list-style: inside;
-    pre{
+    pre {
       margin: 1em 0;
     }
   }
