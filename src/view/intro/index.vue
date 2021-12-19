@@ -17,8 +17,9 @@
         <article class="markdown-body">
           <div class="p1">用途</div>
           <ul>
-            <li>分析你个人项目的提交时间规律</li>
-            <li>在进入一家新公司后快速了解所负责项目是否有在996</li>
+            <li>分析你个人项目的提交时间</li>
+            <li>了解新入职公司的项目是否存在996</li>
+            <li>判断一个项目中到底谁是工贼/卷王(还未实现)</li>
           </ul>
         </article>
       </div>

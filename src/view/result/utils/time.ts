@@ -1,5 +1,6 @@
 import { TimeCount } from '../../../typings'
 import { getTotalCount, getRadio } from './utils'
+import { getWorkDayType, getWorkTime } from './calc'
 
 /**
  * 解析url参数为标准数据格式
@@ -48,6 +49,8 @@ export function useHour(hourData: TimeCount[]) {
   // commit 总数
   const totalCount = hourData.reduce((total, item) => total + item.count, 0)
 
+  const times = getWorkTime(hourData)
+
   return {
     totalCount,
   }
@@ -72,9 +75,13 @@ export function useWeek(weekData: TimeCount[]) {
     sunday: getRadio(commitCount.sunday, totalCount),
   }
 
+  const workDayType = getWorkDayType(commitRatio)
+
   return {
     totalCount,
     commitCount,
     commitRatio,
+
+    workDayType,
   }
 }
