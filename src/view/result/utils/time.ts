@@ -53,6 +53,7 @@ export function useHour(hourData: TimeCount[]) {
 
   return {
     totalCount,
+    times,
   }
 }
 

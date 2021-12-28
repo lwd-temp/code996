@@ -64,7 +64,7 @@ import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { TimeCount } from '../../typings'
 import BarChart from './components/BarChart.vue'
-import { parseResult, parseWeekData, useWeek } from './utils/time'
+import { parseResult, parseWeekData, useWeek, useHour } from './utils/time'
 
 const router = useRouter()
 const { query } = router.currentRoute.value
@@ -76,10 +76,11 @@ function init() {
   const hourData = parseResult(query.hour as string)
   const weekData = parseWeekData(parseResult(query.week as string))
 
-  const { commitRatio } = useWeek(weekData)
-
   hourResult.value = [...hourData]
   weekResult.value = [...weekData]
+  const { times } = useHour(hourData)
+
+  const { commitRatio } = useWeek(weekData)
 }
 
 onMounted(() => {
