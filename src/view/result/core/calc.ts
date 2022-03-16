@@ -4,8 +4,8 @@ import { TimeCount, CalcTimeCount } from '../../../typings'
  * 获取每周工作时长
  * @returns type 1: 每周5天 2: 每周6天 3: 大小周 4: 每周7天 5: 周末干活
  */
-export function getWorkDayType(commitRatio: any) {
-  let type
+export function getWorkDayType(commitRatio: any): number {
+  let type = 1
   if (commitRatio.workday >= 90) {
     type = 1
   } else if (commitRatio.workday >= 85 && commitRatio.workday < 90) {
@@ -37,27 +37,30 @@ export function getWorkTime(hourData: TimeCount[]) {
   // 平方平均数(并非所有模型均适用， 只有在数值分布呈现正态分布时才适用)
   const quadraticValue = hourData.reduce((total, item) => total + item.count ** 2, 0) / hourData.length
   const standardValue = Math.sqrt(quadraticValue)
-  const calcData = hourData.map((item: TimeCount) => {
+  const calcData = hourData.map((item: TimeCount, index: number) => {
+    const score = item.count / standardValue
     return {
       ...item,
-      score: item.count / standardValue,
+      score,
+      prevScore: (item.count - (hourData[index - 1]?.count || item.count)) / standardValue,
+      nextScore: ((hourData[index + 1]?.count || item.count) - item.count) / standardValue,
     }
   })
+  // TODO  计算 score 差，然后在相邻的 score 差内寻找差值较大的时间间隔
+
   // 工作时间
-  const workData = calcData.filter((item) => item.score >= 1)
+  const workData = calcData.filter((item) => item.score >= 0.75)
   // 工作过渡时间
-  const specialData = calcData.filter((item) => item.score < 1)
+  const specialData = calcData.filter((item) => item.score < 1.25)
   // 开工时间段
-  const openingData = specialData.filter((item) => Number(item.time) >= 8 && Number(item.time) <= 11)
+  const openingData = specialData.filter((item) => +item.time >= 8 && +item.time <= 11)
   // 收工时间段
-  const closingData = specialData.filter((item) => Number(item.time) >= 17 && Number(item.time) <= 23)
-  const openingTime = openingData.sort((a, b) => b.score - a.score)[0]
-  const closingTime = closingData.sort((a, b) => b.score - a.score)[0]
+  const closingData = specialData.filter((item) => +item.time >= 17 && +item.time <= 23)
+  const openingTime = openingData.sort((a, b) => b.prevScore - a.prevScore)[0]
+  const closingTime = closingData.sort((a, b) => a.nextScore - b.nextScore)[0]
 
   console.log(calcData)
   // TODO 判断一下这两个时间紧邻的时间的 score 差，如果很离谱，说明可能是30上/下班的
-  console.log(openingTime)
-  console.log(closingTime)
 
   return {
     // 上班时间

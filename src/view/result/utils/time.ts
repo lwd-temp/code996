@@ -1,6 +1,4 @@
 import { TimeCount } from '../../../typings'
-import { getTotalCount, getRadio } from './utils'
-import { getWorkDayType, getWorkTime } from './calc'
 
 /**
  * 解析url参数为标准数据格式
@@ -43,46 +41,4 @@ export function parseWeekData(list: TimeCount[]): TimeCount[] {
       count: item?.count || 0,
     }
   })
-}
-
-export function useHour(hourData: TimeCount[]) {
-  // commit 总数
-  const totalCount = hourData.reduce((total, item) => total + item.count, 0)
-
-  const times = getWorkTime(hourData)
-
-  return {
-    totalCount,
-    times,
-  }
-}
-
-export function useWeek(weekData: TimeCount[]) {
-  const workDayData = weekData.slice(0, 5)
-  const saturdayData = weekData[5]
-  const sundayData = weekData[6]
-  // commit 总数
-  const totalCount = getTotalCount(weekData)
-  const commitCount = {
-    workday: getTotalCount(workDayData),
-    saturday: saturdayData.count,
-    sunday: sundayData.count,
-  }
-
-  // commit 比例
-  const commitRatio = {
-    workday: getRadio(commitCount.workday, totalCount),
-    saturday: getRadio(commitCount.saturday, totalCount),
-    sunday: getRadio(commitCount.sunday, totalCount),
-  }
-
-  const workDayType = getWorkDayType(commitRatio)
-
-  return {
-    totalCount,
-    commitCount,
-    commitRatio,
-
-    workDayType,
-  }
 }

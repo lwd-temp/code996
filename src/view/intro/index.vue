@@ -18,14 +18,14 @@
           <div class="p1">用途</div>
           <ul>
             <li>分析你个人项目的提交时间</li>
-            <li>了解新入职公司的项目是否存在996</li>
-            <li>判断一个项目中到底谁是工贼/卷王(还未实现)</li>
+            <li>了解新入职公司的项目是否存在996迹象</li>
+            <li>判断一个项目中到底谁是卷王</li>
           </ul>
         </article>
       </div>
       <div class="item">
         <div class="left">
-          <div class="icon-mark">@</div>
+          <div class="icon-mark">></div>
         </div>
         <article class="markdown-body">
           <div class="p1">如何使用</div>
@@ -38,6 +38,15 @@ npx code996
             <li>其他环境，可以执行以下脚本</li>
             <pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/test/HEAD/code996.sh)"</pre>
           </ul>
+        </article>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="icon-mark">#</div>
+        </div>
+        <article class="markdown-body">
+          <div class="p1">它怎样工作</div>
+          <p>TODO</p>
         </article>
       </div>
     </div>

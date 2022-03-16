@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Chart :size="{ width: 500, height: 420 }" :data="data" direction="horizontal" :axis="axis">
+    <Chart :size="{ width: 420, height: 420 }" :data="data" direction="horizontal" :axis="axis">
       <template #layers>
         <Grid strokeDasharray="2,2" />
         <Bar :dataKeys="['time', 'count']" :barStyle="{ fill: '#90e0ef' }" />
