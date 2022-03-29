@@ -72,7 +72,7 @@ const previewDemo = () => {
   height: 100%;
   width: 100%;
   .wrapper {
-    width: 1180px;
+    width: 80%;
     margin: 0 auto;
   }
   .banner {

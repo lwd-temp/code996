@@ -2,22 +2,32 @@
   <div class="result">
     <div class="wrapper main">
       <div>
-        <h1>该项目的工作时长为：{{ result.tmpl }}</h1>
+        <h1>该项目的工作时长为：{{ result.workingType }}</h1>
         <p>这是一个普通项目，你应该会干的比较开心</p>
-      </div>
-      <h2>项目分析解读</h2>
-      <div>
-        <p>分析时间段：{{ result.timeStr }}</p>
         <p>总 commit 数：{{ result.totalCount }}</p>
+        <p>分析时间段：{{ result.timeStr }}</p>
       </div>
-      <div class="items">
-        <div class="item">
-          <h2>按小时commit分布：</h2>
-          <BarChart class="mr20" :data="hourResult" />
+      <div></div>
+      <div class="content">
+        <div class="section">
+          <div class="item">
+            <h2>按小时commit分布：</h2>
+            <NewBarChart class="mr20" :data="hourResult" />
+          </div>
+          <div class="item">
+            <h2>加班/工作commit占比：</h2>
+            <NewPieChart class="mr20" :data="workTimePl" />
+          </div>
         </div>
-        <div class="item">
-          <h2>按天commit分布：</h2>
-          <BarChart class="mr20" :data="weekResult" />
+        <div class="section">
+          <div class="item">
+            <h2>按天commit分布：</h2>
+            <NewBarChart class="mr20" :data="weekResult" />
+          </div>
+          <div class="item">
+            <h2>加班/工作commit占比：</h2>
+            <NewPieChart class="mr20" :data="workWeekPl" />
+          </div>
         </div>
       </div>
       <div class="mt20">
@@ -33,20 +43,29 @@
 import { onMounted, ref } from 'vue'
 import { TimeCount } from '../../typings'
 import BarChart from './components/BarChart.vue'
+import PieChart from './components/PieChart.vue'
+import NewBarChart from './components/NewBarChart.vue'
+import NewPieChart from './components/NewPieChart.vue'
 import { getResult, getRoutesMeta } from './core'
 
 const hourResult = ref<TimeCount[]>([])
 const weekResult = ref<TimeCount[]>([])
+const workTimePl = ref<any[]>([])
+const workWeekPl = ref<any[]>([])
 const result = ref<any>({})
 
 function init() {
-  const { hourData, weekData, timeStr } = getRoutesMeta()
+  const { hourData, weekData, timeStr, totalCount } = getRoutesMeta()
+  const { workTimePl: workTimePlValue, workWeekPl: workWeekPlValue } = getResult()
 
   hourResult.value = [...hourData]
   weekResult.value = [...weekData]
+  workTimePl.value = [...workTimePlValue]
+  workWeekPl.value = [...workWeekPlValue]
 
   result.value = {
     ...getResult(),
+    totalCount,
     timeStr,
   }
 }
@@ -60,15 +79,17 @@ onMounted(() => {
   height: 100%;
   width: 100%;
   .wrapper {
-    width: 1180px;
+    width: 80%;
     margin: 0 auto;
   }
 
-  .items {
-    display: flex;
-    .item {
-      h2 {
-        margin-bottom: 10px;
+  .content {
+    .section {
+      display: flex;
+      .item {
+        h2 {
+          margin-bottom: 10px;
+        }
       }
     }
   }

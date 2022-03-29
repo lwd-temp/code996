@@ -1,6 +1,6 @@
 import { useRouter } from 'vue-router'
-import { TimeCount } from '../../../typings'
-import { useWeek, useHour } from './timer'
+import { useHour } from './hour'
+import { useWeek } from './week'
 import { parseResult, parseWeekData } from '../utils/time'
 
 /**
@@ -14,6 +14,7 @@ export function getRoutesMeta() {
   const weekData = parseWeekData(parseResult(query.week as string))
   const timeRange = (query.time as string).split('_')
   const timeStr = `${timeRange[0]} ~ ${timeRange[1]}`
+  const totalCount = hourData.reduce((total, item) => total + item.count, 0)
 
   console.log(query.time)
 
@@ -22,6 +23,7 @@ export function getRoutesMeta() {
     weekData,
     timeRange,
     timeStr,
+    totalCount,
   }
 }
 
@@ -30,15 +32,17 @@ export function getRoutesMeta() {
  */
 export function getResult() {
   const { hourData, weekData } = getRoutesMeta()
-  const { openingTime, closingTime, totalCount } = useHour(hourData)
-  const { workDayTypeValue } = useWeek(weekData)
+  const { openingTime, closingTime, workTimePl } = useHour(hourData)
+  const { workDayTypeValue, workWeekPl } = useWeek(weekData)
 
   const _openingTime = Number(openingTime.time)
   const _closingTime = Number(closingTime.time) % 12
   console.log(openingTime, closingTime)
 
   return {
-    tmpl: `${_openingTime}${_closingTime}${workDayTypeValue}`,
-    totalCount,
+    // 工作类型模板
+    workingType: `${_openingTime}${_closingTime}${workDayTypeValue}`,
+    workTimePl,
+    workWeekPl,
   }
 }

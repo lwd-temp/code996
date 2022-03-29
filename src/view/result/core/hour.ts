@@ -1,29 +1,40 @@
-import { TimeCount, CalcTimeCount } from '../../../typings'
+import { TimeCount } from '../../../typings'
 
-/**
- * 获取每周工作时长
- * @returns type 1: 每周5天 2: 每周6天 3: 大小周 4: 每周7天 5: 周末干活
- */
-export function getWorkDayType(commitRatio: any): number {
-  let type = 1
-  if (commitRatio.workday >= 90) {
-    type = 1
-  } else if (commitRatio.workday >= 85 && commitRatio.workday < 90) {
-    type = 2
-  } else if (commitRatio.workday >= 79 && commitRatio.workday < 85) {
-    type = 3
-  } else if (commitRatio.workday >= 72 && commitRatio.workday < 79) {
-    type = 4
-  } else if (commitRatio.workday < 72) {
-    type = 5
+export function useHour(hourData: TimeCount[]) {
+  const { openingTime, closingTime, workTimePl } = getWorkTime(hourData)
+
+  const openingPrevScore = Math.abs(openingTime.prevScore)
+
+  if (openingPrevScore > 0.5 && openingPrevScore < 0.8) {
+    openingTime.time = `${+openingTime.time - 1}`
   }
-  return type
+  // 下班时间
+  /**
+   * 先判断当前时间是否接近1，如果接近1
+   *    则直接取后者为下班时间
+   * 如果当前时间大于0.75小于1
+   *
+   */
+  if (closingTime.score < 1) {
+  }
+
+  if (closingTime.score + closingTime.nextScore < 0.25) {
+    // closingTime.time = `${+closingTime.time - 1}`
+  } else if (closingTime.score + closingTime.nextScore > 0.5) {
+    // closingTime.time = `${+closingTime.time + 1}`
+  }
+
+  return {
+    openingTime,
+    closingTime,
+    workTimePl,
+  }
 }
 
 /**
- * 获取上班时间和下班时间
+ * 获取工作相关commit数据
  */
-export function getWorkTime(hourData: TimeCount[]) {
+function getWorkTime(hourData: TimeCount[]) {
   // 14 - 17点平均 commit
   // const standardData = hourData.filter((item) => Number(item.time) >= 14 && Number(item.time) <= 17)
   // const standardTotal = standardData.reduce((total, item) => total + item.count, 0)
@@ -31,8 +42,18 @@ export function getWorkTime(hourData: TimeCount[]) {
   // console.log(averageCommit)
 
   // 获取效率最高的前 N 个小时
-  // const res = hourData.sort((a, b) => a.count - b.count)
-  // console.log(res)
+  const sortData = hourData.sort((a, b) => b.count - a.count)
+  console.log(sortData)
+  const worktimeData = sortData.slice(0, 8)
+  const overtimeData = sortData.slice(8, sortData.length + 1)
+  const worktimeDataCount = worktimeData.reduce((total, item) => total + item.count, 0)
+  const overtimeDataCount = overtimeData.reduce((total, item) => total + item.count, 0)
+  console.log(worktimeDataCount, overtimeDataCount)
+
+  const workTimePl = [
+    { time: 'top8', count: worktimeDataCount, timeCount: worktimeData.length },
+    { time: 'else', count: overtimeDataCount, timeCount: overtimeData.length },
+  ]
 
   // 平方平均数(并非所有模型均适用， 只有在数值分布呈现正态分布时才适用)
   const quadraticValue = hourData.reduce((total, item) => total + item.count ** 2, 0) / hourData.length
@@ -67,5 +88,7 @@ export function getWorkTime(hourData: TimeCount[]) {
     openingTime,
     // 下班时间
     closingTime,
+    // 工作表格
+    workTimePl,
   }
 }
