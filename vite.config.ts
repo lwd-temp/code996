@@ -10,6 +10,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
+  base: '/code996/',
   server: {
     host: '0.0.0.0',
     port: 3003,
