@@ -42,8 +42,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { TimeCount } from '../../typings'
-import BarChart from './components/BarChart.vue'
-import PieChart from './components/PieChart.vue'
 import NewBarChart from './components/NewBarChart.vue'
 import NewPieChart from './components/NewPieChart.vue'
 import { getResult, getRoutesMeta } from './core'
