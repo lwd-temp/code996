@@ -43,16 +43,16 @@ function getWorkTime(hourData: TimeCount[]) {
 
   // 获取效率最高的前 N 个小时
   const sortData = hourData.sort((a, b) => b.count - a.count)
-  console.log(sortData)
+  // console.log(sortData)
   const worktimeData = sortData.slice(0, 8)
   const overtimeData = sortData.slice(8, sortData.length + 1)
   const worktimeDataCount = worktimeData.reduce((total, item) => total + item.count, 0)
   const overtimeDataCount = overtimeData.reduce((total, item) => total + item.count, 0)
-  console.log(worktimeDataCount, overtimeDataCount)
+  // console.log(worktimeDataCount, overtimeDataCount)
 
   const workTimePl = [
-    { time: 'top8', count: worktimeDataCount, timeCount: worktimeData.length },
-    { time: 'else', count: overtimeDataCount, timeCount: overtimeData.length },
+    { time: '工作', count: worktimeDataCount, timeCount: worktimeData.length },
+    { time: '加班', count: overtimeDataCount, timeCount: overtimeData.length },
   ]
 
   // 平方平均数(并非所有模型均适用， 只有在数值分布呈现正态分布时才适用)
@@ -80,7 +80,7 @@ function getWorkTime(hourData: TimeCount[]) {
   const openingTime = openingData.sort((a, b) => b.prevScore - a.prevScore)[0]
   const closingTime = closingData.sort((a, b) => a.nextScore - b.nextScore)[0]
 
-  console.log(calcData)
+  // console.log(calcData)
   // TODO 判断一下这两个时间紧邻的时间的 score 差，如果很离谱，说明可能是30上/下班的
 
   return {

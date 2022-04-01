@@ -21,8 +21,8 @@ export function useWeek(weekData: TimeCount[]) {
   }
 
   const workWeekPl = [
-    { time: 'weekday', count: commitCount.workday },
-    { time: 'holiday', count: commitCount.saturday + commitCount.sunday },
+    { time: '工作日', count: commitCount.workday },
+    { time: '周末', count: commitCount.saturday + commitCount.sunday },
   ]
 
   const workDayType = getWorkDayType(commitRatio)

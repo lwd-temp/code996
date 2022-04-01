@@ -78,14 +78,14 @@ const previewDemo = () => {
   .banner {
     &-wrapper {
       .p2 {
-        font-size: 1.2em;
+        font-size: 1.1em;
       }
       .btn {
         display: inline-block;
-        font-size: 1.2em;
+        font-size: 1.1em;
         cursor: pointer;
         background-color: #212121;
-        padding: 16px 40px;
+        padding: 14px 40px;
         background-color: #de335e;
         color: #fff;
         box-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);

@@ -17,7 +17,6 @@ const bar = ref(null)
 watch(
   () => props.data,
   (val) => {
-    console.log(2, props.data)
     new chartXkcd.Pie(bar.value, {
       data: {
         labels: props.data.map((item: any) => item.time),

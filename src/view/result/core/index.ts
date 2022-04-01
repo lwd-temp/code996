@@ -16,8 +16,6 @@ export function getRoutesMeta() {
   const timeStr = `${timeRange[0]} ~ ${timeRange[1]}`
   const totalCount = hourData.reduce((total, item) => total + item.count, 0)
 
-  console.log(query.time)
-
   return {
     hourData,
     weekData,
@@ -37,7 +35,7 @@ export function getResult() {
 
   const _openingTime = Number(openingTime.time)
   const _closingTime = Number(closingTime.time) % 12
-  console.log(openingTime, closingTime)
+  // console.log(openingTime, closingTime)
 
   return {
     // 工作类型模板

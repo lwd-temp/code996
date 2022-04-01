@@ -2,8 +2,12 @@
   <div class="result">
     <div class="wrapper main">
       <div>
-        <h1>该项目的工作时长为：{{ result.workingType }}</h1>
-        <p>这是一个普通项目，你应该会干的比较开心</p>
+        <h1>该项目的996指数是：{{ 100 }}分</h1>
+        <p>定义：标准的996加班时长结果为100分，分值小说明不加班，值越大说明加班越严重</p>
+        <p>
+          推测你们的工作时间为：
+          <span>{{ result.workingType }}</span>
+        </p>
         <p>总 commit 数：{{ result.totalCount }}</p>
         <p>分析时间段：{{ result.timeStr }}</p>
       </div>
