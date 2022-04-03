@@ -1,7 +1,8 @@
 import { TimeCount } from '../../../typings'
 
-export function useHour(hourData: TimeCount[]) {
-  const { openingTime, closingTime, workTimePl } = getWorkTime(hourData)
+export function getHourResult(hourData: TimeCount[]) {
+  const { openingTime, closingTime } = getWorkTimeRange(hourData)
+  const { workTimePl } = getWorkingTime(hourData, openingTime)
 
   const openingPrevScore = Math.abs(openingTime.prevScore)
 
@@ -34,26 +35,12 @@ export function useHour(hourData: TimeCount[]) {
 /**
  * 获取工作相关commit数据
  */
-function getWorkTime(hourData: TimeCount[]) {
+function getWorkTimeRange(hourData: TimeCount[]) {
   // 14 - 17点平均 commit
   // const standardData = hourData.filter((item) => Number(item.time) >= 14 && Number(item.time) <= 17)
   // const standardTotal = standardData.reduce((total, item) => total + item.count, 0)
   // const averageCommit = standardTotal / standardData.length
   // console.log(averageCommit)
-
-  // 获取效率最高的前 N 个小时
-  const sortData = hourData.sort((a, b) => b.count - a.count)
-  // console.log(sortData)
-  const worktimeData = sortData.slice(0, 8)
-  const overtimeData = sortData.slice(8, sortData.length + 1)
-  const worktimeDataCount = worktimeData.reduce((total, item) => total + item.count, 0)
-  const overtimeDataCount = overtimeData.reduce((total, item) => total + item.count, 0)
-  // console.log(worktimeDataCount, overtimeDataCount)
-
-  const workTimePl = [
-    { time: '工作', count: worktimeDataCount, timeCount: worktimeData.length },
-    { time: '加班', count: overtimeDataCount, timeCount: overtimeData.length },
-  ]
 
   // 平方平均数(并非所有模型均适用， 只有在数值分布呈现正态分布时才适用)
   const quadraticValue = hourData.reduce((total, item) => total + item.count ** 2, 0) / hourData.length
@@ -88,7 +75,33 @@ function getWorkTime(hourData: TimeCount[]) {
     openingTime,
     // 下班时间
     closingTime,
-    // 工作表格
-    workTimePl,
   }
+}
+
+/**
+ * 计算每日工作时间和加班时间
+ * 劳动法规定：每日工作时间不超过八小时，同时大部分公司的标准工作时间为朝九晚六，共9小时
+ * 因此定义工作时间为从开工时间算起的区间为9的时间段，加班时间为剩余时间
+ */
+function getWorkingTime(hourData: TimeCount[], openingTime: TimeCount) {
+  // 获取从开工时间算起的正常工作时间
+  const workingTime = hourData.filter((item) => +item.time >= +openingTime.time && +item.time <= +openingTime.time + 9)
+  const workingElseTime = hourData.filter((item) => !workingTime.includes(item))
+  console.log(workingTime, workingElseTime)
+  const workingTimeCount = workingTime.reduce((total, item) => total + item.count, 0)
+  const workingElseTimeCount = workingElseTime.reduce((total, item) => total + item.count, 0)
+
+  // 获取效率最高的前 9 个小时
+  const sortData = hourData.sort((a, b) => b.count - a.count)
+  const top9Time = sortData.slice(0, 9)
+  const top9ElseTime = sortData.slice(9, sortData.length + 1)
+  const top9TimeCount = top9Time.reduce((total, item) => total + item.count, 0)
+  const top9ElseTimeCount = top9ElseTime.reduce((total, item) => total + item.count, 0)
+
+  const workTimePl = [
+    { time: '工作', count: workingTimeCount, timeCount: top9Time.length },
+    { time: '加班', count: workingElseTimeCount, timeCount: top9ElseTime.length },
+  ]
+
+  return { workTimePl, workingTimeCount, workingElseTimeCount, top9TimeCount, top9ElseTimeCount }
 }

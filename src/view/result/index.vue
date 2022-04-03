@@ -58,7 +58,7 @@ const result = ref<any>({})
 
 function init() {
   const { hourData, weekData, timeStr, totalCount } = getRoutesMeta()
-  const { workTimePl: workTimePlValue, workWeekPl: workWeekPlValue } = getResult()
+  const { workingType, workTimePl: workTimePlValue, workWeekPl: workWeekPlValue } = getResult()
 
   hourResult.value = [...hourData]
   weekResult.value = [...weekData]
@@ -66,7 +66,7 @@ function init() {
   workWeekPl.value = [...workWeekPlValue]
 
   result.value = {
-    ...getResult(),
+    workingType,
     totalCount,
     timeStr,
   }

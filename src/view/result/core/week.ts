@@ -1,7 +1,7 @@
 import { getTotalCount, getRadio } from './utils'
 import { TimeCount } from '../../../typings'
 
-export function useWeek(weekData: TimeCount[]) {
+export function getWeekResult(weekData: TimeCount[]) {
   const workDayData = weekData.slice(0, 5)
   const saturdayData = weekData[5]
   const sundayData = weekData[6]
