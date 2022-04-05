@@ -1,3 +1,4 @@
+import { useRouter } from 'vue-router'
 import { TimeCount } from '../../../typings'
 
 /**
@@ -41,4 +42,21 @@ export function parseWeekData(list: TimeCount[]): TimeCount[] {
       count: item?.count || 0,
     }
   })
+}
+
+/**
+ * 检查路由参数是否合法并跳转
+ */
+export function checkUrlQueryAndRediect(): void {
+  const router = useRouter()
+  const { query } = router.currentRoute.value
+
+  if (!query.time || !query.hour || !query.week) {
+    router.push({
+      name: 'index',
+      query: {
+        error: 'url_query_error',
+      },
+    })
+  }
 }

@@ -2,9 +2,9 @@ import { TimeCount } from '../../../typings'
 
 export function getHourResult(hourData: TimeCount[]) {
   const { openingTime, closingTime } = getWorkTimeRange(hourData)
-  const { workTimePl } = getWorkingTime(hourData, openingTime)
+  const { workHourPl } = getWorkingTime(hourData, openingTime)
 
-  const openingPrevScore = Math.abs(openingTime.prevScore)
+  const openingPrevScore = Math.abs(openingTime?.prevScore)
 
   if (openingPrevScore > 0.5 && openingPrevScore < 0.8) {
     openingTime.time = `${+openingTime.time - 1}`
@@ -16,19 +16,19 @@ export function getHourResult(hourData: TimeCount[]) {
    * 如果当前时间大于0.75小于1
    *
    */
-  if (closingTime.score < 1) {
+  if (closingTime?.score < 1) {
   }
 
-  if (closingTime.score + closingTime.nextScore < 0.25) {
+  if (closingTime?.score + closingTime?.nextScore < 0.25) {
     // closingTime.time = `${+closingTime.time - 1}`
-  } else if (closingTime.score + closingTime.nextScore > 0.5) {
+  } else if (closingTime?.score + closingTime?.nextScore > 0.5) {
     // closingTime.time = `${+closingTime.time + 1}`
   }
 
   return {
     openingTime,
     closingTime,
-    workTimePl,
+    workHourPl,
   }
 }
 
@@ -83,11 +83,12 @@ function getWorkTimeRange(hourData: TimeCount[]) {
  * 劳动法规定：每日工作时间不超过八小时，同时大部分公司的标准工作时间为朝九晚六，共9小时
  * 因此定义工作时间为从开工时间算起的区间为9的时间段，加班时间为剩余时间
  */
-function getWorkingTime(hourData: TimeCount[], openingTime: TimeCount) {
+function getWorkingTime(hourData: TimeCount[] = [], openingTime: TimeCount) {
   // 获取从开工时间算起的正常工作时间
-  const workingTime = hourData.filter((item) => +item.time >= +openingTime.time && +item.time <= +openingTime.time + 9)
+  const workingTime = hourData.filter(
+    (item) => +item.time >= +openingTime?.time && +item.time <= +openingTime?.time + 9
+  )
   const workingElseTime = hourData.filter((item) => !workingTime.includes(item))
-  console.log(workingTime, workingElseTime)
   const workingTimeCount = workingTime.reduce((total, item) => total + item.count, 0)
   const workingElseTimeCount = workingElseTime.reduce((total, item) => total + item.count, 0)
 
@@ -98,10 +99,10 @@ function getWorkingTime(hourData: TimeCount[], openingTime: TimeCount) {
   const top9TimeCount = top9Time.reduce((total, item) => total + item.count, 0)
   const top9ElseTimeCount = top9ElseTime.reduce((total, item) => total + item.count, 0)
 
-  const workTimePl = [
+  const workHourPl = [
     { time: '工作', count: workingTimeCount, timeCount: top9Time.length },
     { time: '加班', count: workingElseTimeCount, timeCount: top9ElseTime.length },
   ]
 
-  return { workTimePl, workingTimeCount, workingElseTimeCount, top9TimeCount, top9ElseTimeCount }
+  return { workHourPl, workingTimeCount, workingElseTimeCount, top9TimeCount, top9ElseTimeCount }
 }

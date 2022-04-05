@@ -2,8 +2,8 @@
   <div class="result">
     <div class="wrapper main">
       <div>
-        <h1>该项目的996指数是：{{ 100 }}分</h1>
-        <p>定义：标准的996加班时长结果为100分，分值小说明不加班，值越大说明加班越严重</p>
+        <h1>该项目的996指数是：{{ result.index996 }}</h1>
+        <p>定义：为0则不加班，值越大代表加班越严重，996工作制的结果为100</p>
         <p>
           推测你们的工作时间为：
           <span>{{ result.workingType }}</span>
@@ -20,7 +20,7 @@
           </div>
           <div class="item">
             <h2>加班/工作commit占比：</h2>
-            <NewPieChart class="mr20" :data="workTimePl" />
+            <NewPieChart class="mr20" :data="workHourRadio" />
           </div>
         </div>
         <div class="section">
@@ -30,7 +30,7 @@
           </div>
           <div class="item">
             <h2>加班/工作commit占比：</h2>
-            <NewPieChart class="mr20" :data="workWeekPl" />
+            <NewPieChart class="mr20" :data="workWeekRadio" />
           </div>
         </div>
       </div>
@@ -49,31 +49,36 @@ import { TimeCount } from '../../typings'
 import NewBarChart from './components/NewBarChart.vue'
 import NewPieChart from './components/NewPieChart.vue'
 import { getResult, getRoutesMeta } from './core'
+import { checkUrlQueryAndRediect } from './core/url-helper'
 
 const hourResult = ref<TimeCount[]>([])
 const weekResult = ref<TimeCount[]>([])
-const workTimePl = ref<any[]>([])
-const workWeekPl = ref<any[]>([])
+const workHourRadio = ref<any[]>([])
+const workWeekRadio = ref<any[]>([])
 const result = ref<any>({})
 
 function init() {
   const { hourData, weekData, timeStr, totalCount } = getRoutesMeta()
-  const { workingType, workTimePl: workTimePlValue, workWeekPl: workWeekPlValue } = getResult()
+  const { workingType, index996, workHourPl, workWeekPl } = getResult()
 
   hourResult.value = [...hourData]
   weekResult.value = [...weekData]
-  workTimePl.value = [...workTimePlValue]
-  workWeekPl.value = [...workWeekPlValue]
+  workHourRadio.value = [...workHourPl]
+  workWeekRadio.value = [...workWeekPl]
 
   result.value = {
     workingType,
     totalCount,
     timeStr,
+    index996,
   }
 }
 
+checkUrlQueryAndRediect()
+
 onMounted(() => {
   init()
+  console.log(3)
 })
 </script>
 <style lang="scss" scoped>
