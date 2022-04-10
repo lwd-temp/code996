@@ -16,21 +16,21 @@
         <div class="section">
           <div class="item">
             <h2>按小时commit分布：</h2>
-            <NewBarChart class="mr20" :data="hourResult" />
+            <BarChart class="mr20" :data="hourResult" />
           </div>
           <div class="item">
             <h2>加班/工作commit占比：</h2>
-            <NewPieChart class="mr20" :data="workHourRadio" />
+            <PieChart class="mr20" :data="workHourRadio" />
           </div>
         </div>
         <div class="section">
           <div class="item">
             <h2>按天commit分布：</h2>
-            <NewBarChart class="mr20" :data="weekResult" />
+            <BarChart class="mr20" :data="weekResult" />
           </div>
           <div class="item">
             <h2>加班/工作commit占比：</h2>
-            <NewPieChart class="mr20" :data="workWeekRadio" />
+            <PieChart class="mr20" :data="workWeekRadio" />
           </div>
         </div>
       </div>
@@ -46,8 +46,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { TimeCount } from '../../typings'
-import NewBarChart from './components/NewBarChart.vue'
-import NewPieChart from './components/NewPieChart.vue'
+import BarChart from './components/BarChart.vue'
+import PieChart from './components/PieChart.vue'
 import { getResult, getRoutesMeta } from './core'
 import { checkUrlQueryAndRediect } from './core/url-helper'
 

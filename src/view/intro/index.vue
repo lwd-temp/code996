@@ -17,9 +17,9 @@
         <article class="markdown-body">
           <div class="p1">用途</div>
           <ul>
-            <li>分析你个人项目的提交时间</li>
+            <li>分析项目的提交时间</li>
             <li>了解新入职公司的项目是否存在996迹象</li>
-            <li>判断一个项目中到底谁是卷王</li>
+            <li class="todo">判断一个项目中到底谁是卷王</li>
           </ul>
         </article>
       </div>
@@ -30,13 +30,13 @@
         <article class="markdown-body">
           <div class="p1">如何使用</div>
           <ul>
-            <li>如果你拥有 node 环境，可以直接执行 npm 命令</li>
+            <li>切到git项目的根目录，执行以下脚本</li>
+            <pre>/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh)"</pre>
+            <li>如果你拥有 node 环境，也可以直接执行以下命令</li>
             <pre>
 npx code996
 </pre
             >
-            <li>其他环境，可以执行以下脚本</li>
-            <pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/test/HEAD/code996.sh)"</pre>
           </ul>
         </article>
       </div>
@@ -125,6 +125,9 @@ const previewDemo = () => {
     list-style: inside;
     pre {
       margin: 1em 0;
+    }
+    .todo {
+      text-decoration: line-through;
     }
   }
 }
