@@ -60,7 +60,7 @@ function get996Index({ workHourPl, workWeekPl }: any) {
 
   /**
    * 修正后的加班commit数量
-   * 要计算的加班时间为：周一到周五的非工作时间+周末全天，因此以工作日加班时间为标准，进行数学修正
+   * 定义的每周加班时间：周一到周五的非工作时间+周末全天，因此以工作日加班时间为标准，进行数学修正
    * 定义：小时维度 x 加班时长 y 正常上班时长；天维度 m 工作日；n 周六周日
    */
   const overTimeAmendCount = (x + (y * n) / (m + n)).toFixed(0)
@@ -79,8 +79,8 @@ function get996Index({ workHourPl, workWeekPl }: any) {
 
 /**
  * 校验数据
- * 1. 项目数据伪造✅
- * 2. 项目commit过少✅
+ * 1. 项目数据伪造
+ * 2. 项目commit过少
  * 3. 项目commit分布不像正常工作时间
  */
 function checkDataIsRight(params: any) {

@@ -11,7 +11,7 @@
         <p>总 commit 数：{{ result.totalCount }}</p>
         <p>分析时间段：{{ result.timeStr }}</p>
       </div>
-      <div></div>
+      <div class="back-btn" @click="goBack">返回</div>
       <div class="content">
         <div class="section">
           <div class="item">
@@ -46,10 +46,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { TimeCount } from '../../typings'
+import { router } from '../../router'
 import BarChart from './components/BarChart.vue'
 import PieChart from './components/PieChart.vue'
 import { getResult, getRoutesMeta } from './core'
-import { checkUrlQueryAndRediect } from './core/url-helper'
+import { checkUrlQueryAndRedirect } from './core/url-helper'
 
 const hourResult = ref<TimeCount[]>([])
 const weekResult = ref<TimeCount[]>([])
@@ -74,7 +75,13 @@ function init() {
   }
 }
 
-checkUrlQueryAndRediect()
+const goBack = () => {
+  router.push({
+    name: 'index',
+  })
+}
+
+checkUrlQueryAndRedirect()
 
 onMounted(() => {
   init()
@@ -86,8 +93,14 @@ onMounted(() => {
   height: 100%;
   width: 100%;
   .wrapper {
+    position: relative;
     width: 80%;
     margin: 0 auto;
+  }
+  .back-btn {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
   }
 
   .content {

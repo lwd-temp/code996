@@ -47,7 +47,7 @@ export function parseWeekData(list: TimeCount[]): TimeCount[] {
 /**
  * 检查路由参数是否合法并跳转
  */
-export function checkUrlQueryAndRediect(): void {
+export function checkUrlQueryAndRedirect(): void {
   const router = useRouter()
   const { query } = router.currentRoute.value
 

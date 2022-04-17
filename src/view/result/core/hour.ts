@@ -4,27 +4,6 @@ export function getHourResult(hourData: TimeCount[]) {
   const { openingTime, closingTime } = getWorkTimeRange(hourData)
   const { workHourPl } = getWorkingTime(hourData, openingTime)
 
-  const openingPrevScore = Math.abs(openingTime?.prevScore)
-
-  if (openingPrevScore > 0.5 && openingPrevScore < 0.8) {
-    openingTime.time = `${+openingTime.time - 1}`
-  }
-  // 下班时间
-  /**
-   * 先判断当前时间是否接近1，如果接近1
-   *    则直接取后者为下班时间
-   * 如果当前时间大于0.75小于1
-   *
-   */
-  if (closingTime?.score < 1) {
-  }
-
-  if (closingTime?.score + closingTime?.nextScore < 0.25) {
-    // closingTime.time = `${+closingTime.time - 1}`
-  } else if (closingTime?.score + closingTime?.nextScore > 0.5) {
-    // closingTime.time = `${+closingTime.time + 1}`
-  }
-
   return {
     openingTime,
     closingTime,
@@ -67,8 +46,27 @@ function getWorkTimeRange(hourData: TimeCount[]) {
   const openingTime = openingData.sort((a, b) => b.prevScore - a.prevScore)[0]
   const closingTime = closingData.sort((a, b) => a.nextScore - b.nextScore)[0]
 
-  // console.log(calcData)
   // TODO 判断一下这两个时间紧邻的时间的 score 差，如果很离谱，说明可能是30上/下班的
+  const openingPrevScore = Math.abs(openingTime?.prevScore)
+
+  if (openingPrevScore > 0.5 && openingPrevScore < 0.8) {
+    openingTime.time = `${+openingTime.time - 1}`
+  }
+  // 下班时间
+  /**
+   * 先判断当前时间是否接近1，如果接近1
+   *    则直接取后者为下班时间
+   * 如果当前时间大于0.75小于1
+   *
+   */
+  if (closingTime?.score < 1) {
+  }
+
+  if (closingTime?.score + closingTime?.nextScore < 0.25) {
+    // closingTime.time = `${+closingTime.time - 1}`
+  } else if (closingTime?.score + closingTime?.nextScore > 0.5) {
+    // closingTime.time = `${+closingTime.time + 1}`
+  }
 
   return {
     // 上班时间
