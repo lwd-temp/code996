@@ -1,18 +1,38 @@
 <template>
   <div class="result">
-    <div class="wrapper main">
-      <div>
-        <h1>该项目的996指数是：{{ result.index996 }}</h1>
-        <p>定义：为0则不加班，值越大代表加班越严重，996工作制的结果为100</p>
-        <p>
-          推测你们的工作时间为：
-          <span>{{ result.workingType }}</span>
+    <div class="banner">
+      <div class="banner-wrapper wrapper">
+        <p class="logo-text mb10">#CODE996</p>
+        <p class="p2 mb40">
+          code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
-        <p>总 commit 数：{{ result.totalCount }}</p>
-        <p>分析时间段：{{ result.timeStr }}</p>
+        <span class="btn" @click="previewDemo">查看示例</span>
       </div>
-      <div class="back-btn" @click="goBack">返回</div>
-      <div class="content">
+    </div>
+    <div class="wrapper main">
+      <div class="top-result container">
+        <h1>该项目的996指数是：</h1>
+        <div class="result-line">
+          <div class="score-box">
+            <div class="score-number">{{ result.index996 }}</div>
+            <div class="subtitle">厉害了我的老鸽！</div>
+          </div>
+          <div class="content">
+             <p>
+              推测你们的工作时间为：
+              <span>{{ result.workingType }}</span>
+            </p>
+            <p>总 commit 数：<span>{{ result.totalCount }}</span></p>
+            <p>分析时间段：<span>{{ result.timeStr }}</span></p>
+            <div className="exp">
+              <p>定义：为0则不加班，值越大代表加班越严重，996工作制的结果为100。</p>
+          
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="content container">
         <div class="section">
           <div class="item">
             <h2>按小时commit分布：</h2>
@@ -34,7 +54,7 @@
           </div>
         </div>
       </div>
-      <div class="mt20">
+      <div class="mt20 container">
         <h2>安全声明：</h2>
         <p>分析结果仅供参考，不代表任何建议</p>
         <p>原始分析数据通过 URL 传输，请不要轻易分享 URL 给第三方</p>
@@ -89,29 +109,4 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
-.result {
-  height: 100%;
-  width: 100%;
-  .wrapper {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-  }
-  .back-btn {
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-  }
-
-  .content {
-    .section {
-      display: flex;
-      .item {
-        h2 {
-          margin-bottom: 10px;
-        }
-      }
-    }
-  }
-}
 </style>
