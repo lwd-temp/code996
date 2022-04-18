@@ -21,7 +21,7 @@ body {
   src: url('/sources/fonts/zpix.woff2') format('woff2');
 }
 
-.container{
+.container {
   padding: 40px 0;
 }
 
@@ -140,7 +140,6 @@ body {
   }
 }
 
-
 .result {
   height: 100%;
   width: 100%;
@@ -151,35 +150,33 @@ body {
   }
 
   .top-result {
-    h1{
+    h1 {
       font-size: 2em;
       color: #de335e;
-      text-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 
-      6px 6px 0px rgb(0 0 0 / 20%);
+      text-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 6px 6px 0px rgb(0 0 0 / 20%);
     }
-    .result-line{
+    .result-line {
       display: flex;
       margin-top: 40px;
       margin-bottom: 40px;
     }
-    .score-box{
+    .score-box {
       position: relative;
       display: inline-block;
       margin-right: 60px;
     }
-    .score-number{
+    .score-number {
       display: inline-block;
       background-color: #de335e;
       color: #fff;
-      font-size:8em;
-      text-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 
-    10px 10px 0px rgb(0 0 0 / 20%);
-    box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 10px 10px 0px rgb(0 0 0 / 20%);
+      font-size: 8em;
+      text-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 10px 10px 0px rgb(0 0 0 / 20%);
+      box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 10px 10px 0px rgb(0 0 0 / 20%);
       font-family: 'vcr-osd';
       line-height: 1;
       padding: 30px 30px;
     }
-    .subtitle{
+    .subtitle {
       position: absolute;
       right: -20%;
       bottom: 0;
@@ -188,18 +185,18 @@ body {
       transform: rotate(-10deg);
       animation: subtitleAni 1s alternate infinite ease-in-out;
     }
-    .content{
+    .content {
       font-size: 1em;
-      span{
+      span {
         color: #de335e;
         font-size: 1.25em;
       }
-      .exp{
+      .exp {
         margin-top: 20px;
         border-top: 1px solid #2f2f2f;
         padding-top: 20px;
-        font-size: .85em;
-        opacity: .46;
+        font-size: 0.85em;
+        opacity: 0.46;
       }
     }
   }

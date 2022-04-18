@@ -32,7 +32,7 @@ export function getResult() {
   const { hourData, weekData } = getRoutesMeta()
   const { openingTime, closingTime, workHourPl } = getHourResult(hourData)
   const { workDayTypeValue, workWeekPl } = getWeekResult(weekData)
-  const { index996, overTimeRadio } = get996Index({ workHourPl, workWeekPl })
+  const { index996, index996Str, overTimeRadio } = get996Index({ workHourPl, workWeekPl })
 
   const MSG_TYPE = checkDataIsRight({ workHourPl, workWeekPl, index996, overTimeRadio })
 
@@ -45,6 +45,7 @@ export function getResult() {
     workHourPl,
     workWeekPl,
     index996,
+    index996Str,
     MSG_TYPE,
   }
 }
@@ -74,7 +75,23 @@ function get996Index({ workHourPl, workWeekPl }: any) {
    */
   const index996 = overTimeRadio * 3
 
-  return { index996, overTimeRadio }
+  let index996Str = ''
+
+  if (index996 <= 30) {
+    index996Str = '不卷，可以继续干~'
+  } else if (index996 > 30 && index996 <= 50) {
+    index996Str = '加班较多，保重身体！'
+  } else if (index996 > 50 && index996 <= 70) {
+    index996Str = '加班较多，保重身体！'
+  } else if (index996 > 70 && index996 <= 90) {
+    index996Str = '加班较多，保重身体！'
+  } else if (index996 > 90 && index996 <= 110) {
+    index996Str = '鉴定为996项目！'
+  } else if (index996 > 110) {
+    index996Str = '猝死边缘，快跑！！！'
+  }
+
+  return { index996, index996Str, overTimeRadio }
 }
 
 /**
