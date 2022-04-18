@@ -17,3 +17,10 @@ export function getTotalCount(data: TimeCount[]) {
 export function getRadio(element: number, denominator: number, decimal: number = 2): number {
   return +((element / denominator) * 100).toFixed(decimal)
 }
+
+/**
+ * 获取随机文本
+ */
+export function getRandomText(texts: string[] = []): string {
+  return texts[Math.floor(Math.random() * texts.length)]
+}
