@@ -6,7 +6,7 @@
         <p class="p2 mb40">
           code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
-        <span class="btn" @click="previewDemo">查看示例</span>
+        <span class="btn" @click="previewDemo">查看示例结果</span>
       </div>
     </div>
     <div class="main wrapper">
@@ -17,9 +17,10 @@
         <article class="markdown-body">
           <div class="p1">用途</div>
           <ul>
-            <li>分析项目的提交时间</li>
-            <li>了解新入职公司的项目是否存在996迹象</li>
-            <li class="todo">判断一个项目中到底谁是卷王</li>
+            <li>分析 git 项目的 commit 提交时间规律</li>
+            <li>入职新公司后了解项目是否存在996迹象</li>
+            <li>在上班的摸鱼时光找点乐子</li>
+            <!-- <li class="todo">判断一个项目中到底谁是卷王</li> -->
           </ul>
         </article>
       </div>
@@ -30,11 +31,11 @@
         <article class="markdown-body">
           <div class="p1">如何使用</div>
           <ul>
-            <li>切到git项目的根目录，执行以下脚本</li>
+            <li>在项目的根目录，执行以下脚本</li>
             <pre>/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh)"</pre>
             <li>如果你拥有 node 环境，也可以直接执行以下命令</li>
             <pre>
-npx code996
+npx code996 -o
 </pre
             >
           </ul>
@@ -46,7 +47,24 @@ npx code996
         </div>
         <article class="markdown-body">
           <div class="p1">它怎样工作</div>
-          <p>TODO</p>
+          <p>1. 使用 git-log 对你的项目进行查询，得到以小时汇总和以天汇总的commit统计结果</p>
+          <p>2. 将本地脚本得到的查询结果转为 URL 参数，并打开 URL 到网页</p>
+          <p>3. 从 URL 拿到数据，并使用一些规则处理，并将结果可视化展现</p>
+        </article>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="icon-mark">@</div>
+        </div>
+        <article class="markdown-body">
+          <div class="p1">它安全吗</div>
+          <p>1. 脚本端和 web 端均不会发起任何请求以收集数据</p>
+          <p>2. 除分析的起始时间、commit结果等数据外，URL 本身不泄露项目名等任何关键信息</p>
+          <p>
+            3. 所以代码均已开源到
+            <a href="https://github.com/hellodigua/code996">github</a>
+            ，请放心食用
+          </p>
         </article>
       </div>
     </div>
@@ -75,7 +93,7 @@ const previewDemo = () => {
   .main {
     .item {
       display: flex;
-      padding-bottom: 5em;
+      padding-bottom: 3em;
       .left {
         width: 120px;
       }
