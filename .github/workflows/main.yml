@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - develop
 
 # 任务
 jobs:
@@ -25,3 +26,11 @@ jobs:
           REPOSITORY_NAME: hellodigua/code996
           BRANCH: gh-pages
           FOLDER: dist
+
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:hellodigua/code996.git
+          destination-repo: git@gitee.com:hellodigua/code996.git
