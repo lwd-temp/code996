@@ -68,11 +68,12 @@ npx code996 -o
         </article>
       </div>
     </div>
-    <div class="footer wrapper"></div>
+    <Footer />
   </div>
 </template>
 <script setup lang="ts">
 import { router } from '../../router'
+import Footer from '../../public/components/Footer.vue'
 
 const previewDemo = () => {
   router.push({

@@ -14,7 +14,7 @@ export function getRoutesMeta() {
   const hourData = parseResult(query.hour as string)
   const weekData = parseWeekData(parseResult(query.week as string))
   const timeRange = (query.time as string).split('_')
-  const timeStr = `${timeRange[0]} ~ ${timeRange[1]}`
+  const timeStr = `${timeRange[0]} ∼ ${timeRange[1]}`
   const totalCount = hourData.reduce((total, item) => total + item.count, 0)
 
   return {
