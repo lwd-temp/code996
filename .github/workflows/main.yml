@@ -34,3 +34,11 @@ jobs:
         with:
           source-repo: git@github.com:hellodigua/code996.git
           destination-repo: git@gitee.com:hellodigua/code996.git
+
+      - name: Build Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          gitee-username: hellodigua
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: hellodigua/code996
+          branch: gh-pages
