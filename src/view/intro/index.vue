@@ -94,7 +94,7 @@ const previewDemo = () => {
   .main {
     .item {
       display: flex;
-      padding-bottom: 3em;
+      padding-bottom: 5em;
       .left {
         width: 120px;
       }
@@ -122,6 +122,9 @@ const previewDemo = () => {
   .markdown-body ul {
     padding-left: 0;
     list-style: inside;
+    li{
+      margin-bottom: 16px;
+    }
     pre {
       margin: 1em 0;
     }
@@ -135,11 +138,26 @@ const previewDemo = () => {
   .index {
     .wrapper {
       width: 90%;
-      padding: 0 5%;
     }
+        .logo-text {
+        font-size: 17vw;
+        margin-bottom: 10px;
+      }
     .main {
       display: block !important;
+      
+     .item{
+        flex-direction: column;
+        .left{
+          margin-bottom: 20px;
+        }
+        .p1{
+          margin-bottom: 20px;
+        }
+      }
+  
     }
+  
   }
 }
 </style>

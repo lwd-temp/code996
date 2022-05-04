@@ -36,7 +36,4 @@ watch(
 )
 </script>
 <style lang="scss" scoped>
-.bar-chart {
-  width: 500px;
-}
 </style>
