@@ -15,7 +15,7 @@ export const router = createRouter({
       path: '/result',
       name: 'result',
       component: Result,
-      meta: { title: '分析结果' },
+      meta: { title: 'result | code996' },
     },
   ],
 })

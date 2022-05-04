@@ -50,25 +50,10 @@ const { label, url, title } = getMirrorConfig()
   background: #2a2a2a;
   text-align: center;
   margin-top: 3em;
-  padding: 4em 0;
+  padding: 2em 0;
+  font-size: 0.9em;
   a {
     color: #de335e;
-  }
-  .button{
-    display: inline-block;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #212121;
-    padding: 10px 20px;
-    background-color: #444;
-    color: #fff;
-    box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 10px 10px 0px rgb(0 0 0 / 20%);
-    margin-bottom: 40px;
-    transition: .3s all;
-    &:hover{
-      background-color: #4a4a4a;
-      box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 5px 5px 0px rgb(0 0 0 / 20%);
-    }
   }
 }
 </style>

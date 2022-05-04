@@ -2,7 +2,7 @@
   <div class="index">
     <div class="banner">
       <div class="banner-wrapper wrapper">
-        <p class="logo-text mb10">#CODE996</p>
+        <p class="logo-text">#CODE996</p>
         <p class="p2 mb40">
           code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
@@ -59,11 +59,11 @@ npx code996 -o
         <article class="markdown-body">
           <div class="p1">它安全吗</div>
           <p>1. 脚本端和 web 端均不会发起任何请求以收集数据</p>
-          <p>2. 除分析的起始时间、commit结果等数据外，URL 本身不泄露项目名等任何关键信息</p>
+          <p>2. 除分析的起始时间、commit结果等通用数据外，URL 本身不泄露项目名等任何关键信息</p>
           <p>
             3. 所以代码均已开源到
             <a href="https://github.com/hellodigua/code996">github</a>
-            ，请放心食用
+            ，接受社区监督
           </p>
         </article>
       </div>
@@ -90,6 +90,14 @@ const previewDemo = () => {
 .index {
   height: 100%;
   width: 100%;
+
+  .logo-text {
+    font-size: 7em;
+    color: #de335e;
+    font-family: vcr-osd;
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+  }
 
   .main {
     .item {

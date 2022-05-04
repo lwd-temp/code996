@@ -32,12 +32,10 @@ function getWorkTimeRange(hourData: TimeCount[]) {
   const workData = calcData.filter((item) => item.score >= 0.5)
   // 开工时间段
   const openingData = workData.filter((item) => +item.time >= 8 && +item.time <= 12)
-  console.log(openingData)
   // 收工时间段
   const closingData = workData.filter((item) => +item.time >= 17 && +item.time <= 23)
 
   const openingTime = openingData.sort((a, b) => Number(a.time) - Number(b.time))[0]
-  console.log(openingTime)
   const closingTime = closingData.sort((a, b) => Number(b.time) - Number(a.time))[0]
 
   // TODO 判断一下这两个时间紧邻的时间的 score 差，如果很离谱，说明可能是30上/下班的

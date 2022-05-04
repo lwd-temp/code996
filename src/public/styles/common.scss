@@ -7,6 +7,10 @@ body {
 }
 
 @font-face {
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'vcr-osd';
   src: url('/sources/fonts/vcr-osd.ttf');
 }
@@ -91,14 +95,6 @@ body {
   a {
     color: #de335e;
   }
-}
-
-.logo-text {
-  font-size: 7em;
-  color: #de335e;
-  font-family: vcr-osd;
-  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom: 40px;
 }
 
 .banner {

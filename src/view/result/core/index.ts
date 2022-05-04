@@ -81,7 +81,7 @@ function get996Index({ workHourPl, workWeekPl }: any) {
   if (index996 <= 10) {
     index996Str = getRandomText(['小伙子工作不饱和啊'])
   } else if (index996 > 10 && index996 <= 50) {
-    index996Str = getRandomText(['你还有剩余价值', '加油，老板的法拉利就靠你'])
+    index996Str = getRandomText(['你还有剩余价值', '加油，老板的法拉利靠你了'])
   } else if (index996 > 50 && index996 <= 90) {
     index996Str = getRandomText(['你背叛了工人阶级！'])
   } else if (index996 > 90 && index996 <= 110) {
