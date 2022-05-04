@@ -2,8 +2,8 @@
   <div class="result">
     <div class="header">
       <div class="wrapper">
-      <span class="button back" @click="goBack">返回</span>
-      <h1>#CODE996 Result</h1>
+        <span class="button back" @click="goBack">返回</span>
+        <h1>#CODE996 Result</h1>
       </div>
     </div>
     <div class="wrapper main">
@@ -57,89 +57,89 @@
       </div>
       <h2>工作时间参照表：</h2>
       <div class="table-box">
-      <table class="container table">
-        <thead>
-          <tr>
-            <th class="l">时间类型</th>
-            <th>955</th>
-            <th>965</th>
-            <th>966</th>
-            <th>995</th>
-            <th>996</th>
-            <th>997</th>
-            <th>9126</th>
-            <th>9127</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="l">日均公司打卡时长</td>
-            <td>8</td>
-            <td>9</td>
-            <td>9</td>
-            <td>12</td>
-            <td>12</td>
-            <td>12</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td class="l">日均有效工作时间</td>
-            <td>6</td>
-            <td>7.5</td>
-            <td>7.5</td>
-            <td>9.5</td>
-            <td>9.5</td>
-            <td>9.5</td>
-            <td>12.5</td>
-            <td>12.5</td>
-          </tr>
-          <tr>
-            <td class="l">实际工时</td>
-            <td>30</td>
-            <td>37.5</td>
-            <td>45</td>
-            <td>47.5</td>
-            <td>57</td>
-            <td>66.5</td>
-            <td>75</td>
-            <td>87.5</td>
-          </tr>
-          <tr>
-            <td class="l">预计每周加班时长</td>
-            <td>-7.5</td>
-            <td>0</td>
-            <td>7.5</td>
-            <td>10</td>
-            <td>19.5</td>
-            <td>29</td>
-            <td>37.5</td>
-            <td>50</td>
-          </tr>
-          <tr>
-            <td class="l">加班时间占比</td>
-            <td>0</td>
-            <td>0</td>
-            <td>16%</td>
-            <td>21%</td>
-            <td>34%</td>
-            <td>43.6%</td>
-            <td>50%</td>
-            <td>57%</td>
-          </tr>
-          <tr>
-            <td class="l">996指数</td>
-            <td>负分</td>
-            <td>0分</td>
-            <td>48分</td>
-            <td>63分</td>
-            <td>100分</td>
-            <td>130分</td>
-            <td>150分</td>
-            <td>171分</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="container table">
+          <thead>
+            <tr>
+              <th class="l">时间类型</th>
+              <th>955</th>
+              <th>965</th>
+              <th>966</th>
+              <th>995</th>
+              <th>996</th>
+              <th>997</th>
+              <th>9126</th>
+              <th>9127</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="l">日均公司打卡时长</td>
+              <td>8</td>
+              <td>9</td>
+              <td>9</td>
+              <td>12</td>
+              <td>12</td>
+              <td>12</td>
+              <td>15</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td class="l">日均有效工作时间</td>
+              <td>6</td>
+              <td>7.5</td>
+              <td>7.5</td>
+              <td>9.5</td>
+              <td>9.5</td>
+              <td>9.5</td>
+              <td>12.5</td>
+              <td>12.5</td>
+            </tr>
+            <tr>
+              <td class="l">实际工时</td>
+              <td>30</td>
+              <td>37.5</td>
+              <td>45</td>
+              <td>47.5</td>
+              <td>57</td>
+              <td>66.5</td>
+              <td>75</td>
+              <td>87.5</td>
+            </tr>
+            <tr>
+              <td class="l">预计每周加班时长</td>
+              <td>-7.5</td>
+              <td>0</td>
+              <td>7.5</td>
+              <td>10</td>
+              <td>19.5</td>
+              <td>29</td>
+              <td>37.5</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td class="l">加班时间占比</td>
+              <td>0</td>
+              <td>0</td>
+              <td>16%</td>
+              <td>21%</td>
+              <td>34%</td>
+              <td>43.6%</td>
+              <td>50%</td>
+              <td>57%</td>
+            </tr>
+            <tr>
+              <td class="l">996指数</td>
+              <td>负分</td>
+              <td>0分</td>
+              <td>48分</td>
+              <td>63分</td>
+              <td>100分</td>
+              <td>130分</td>
+              <td>150分</td>
+              <td>171分</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="mt20 container">
         <h2>安全声明：</h2>
@@ -196,17 +196,17 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
-.header{
-    padding: 40px 0;
-    width: 100%;
-    background: #2a2a2a;
-    .wrapper{
-          display: flex;
-      flex-direction: row;
+.header {
+  padding: 40px 0;
+  width: 100%;
+  background: #2a2a2a;
+  .wrapper {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    }
-  .button{
+  }
+  .button {
     display: inline-block;
     font-size: 1em;
     cursor: pointer;
@@ -215,14 +215,14 @@ onMounted(() => {
     background-color: #444;
     color: #fff;
     box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 8px 8px 0px rgb(0 0 0 / 20%);
-    transition: .3s all;
-    &:hover{
+    transition: 0.3s all;
+    &:hover {
       background-color: #4a4a4a;
       box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 5px 5px 0px rgb(0 0 0 / 20%);
     }
     margin-right: 30px;
   }
-  h1{
+  h1 {
     line-height: 48px;
     color: #999;
     font-family: vcr-osd;
@@ -232,45 +232,45 @@ onMounted(() => {
 }
 
 .main {
-  padding-top: 3em;
+  padding-top: 0;
 }
 
-.table-box{
+.table-box {
   width: 100%;
   overflow: auto;
   margin: 20px 0;
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  .l{
-    min-width: 10em;
-  }
-  tr {
-    border-bottom: 1px solid #555;
-    td {
-      padding: 10px;
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    .l {
+      min-width: 10em;
+    }
+    tr {
+      border-bottom: 1px solid #555;
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+    }
+    th {
       text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #999;
+    }
+    td {
+      text-align: center;
+      padding: 10px;
     }
   }
-  th {
-    text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid #999;
-  }
-  td {
-    text-align: center;
-    padding: 10px;
-  }
-}
 }
 
 @media screen and (max-width: 700px) {
-  .header{
+  .header {
     padding: 30px 0;
-    .wrapper{
+    .wrapper {
       flex-direction: column;
-      .button{
+      .button {
         margin-bottom: 20px;
       }
     }

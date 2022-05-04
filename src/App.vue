@@ -15,5 +15,4 @@ export default defineComponent({
 
 <style lang="scss">
 @import '@/public/styles/index.scss';
-
 </style>

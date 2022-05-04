@@ -122,7 +122,7 @@ const previewDemo = () => {
   .markdown-body ul {
     padding-left: 0;
     list-style: inside;
-    li{
+    li {
       margin-bottom: 16px;
     }
     pre {
@@ -139,25 +139,23 @@ const previewDemo = () => {
     .wrapper {
       width: 90%;
     }
-        .logo-text {
-        font-size: 17vw;
-        margin-bottom: 10px;
-      }
+    .logo-text {
+      font-size: 17vw;
+      margin-bottom: 10px;
+    }
     .main {
       display: block !important;
-      
-     .item{
+
+      .item {
         flex-direction: column;
-        .left{
+        .left {
           margin-bottom: 20px;
         }
-        .p1{
+        .p1 {
           margin-bottom: 20px;
         }
       }
-  
     }
-  
   }
 }
 </style>
