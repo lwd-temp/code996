@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="wrapper">
       <p>
-        <a class="button" :href="getChinaMirrorUrl" title="中国大陆节点">🇨🇳 切换大陆节点</a>
+        <a :href="url" :title="title">{{ label }}</a>
       </p>
       <p>
         自豪的采用
@@ -18,20 +18,31 @@
   </div>
 </template>
 <script setup lang="ts">
-/**
- * 获取中国大陆镜像
- */
-const getChinaMirrorUrl = () => {
-  const url = window.location.href
-  const host = window.location.host
-  const protocol = window.location.protocol
-  const path = window.location.pathname
-  const query = window.location.search
-  const hash = window.location.hash
-  const mirror = 'https://hellodigua.gitee.io'
-  const chinaMirror = `${protocol}//${mirror}${path}${query}${hash}`
-  return url.indexOf(host) > -1 ? chinaMirror : url
+const getMirrorConfig = () => {
+  let url = window.location.href
+  let label = ''
+  let title = ''
+
+  const isGithubMirror = window.location.host.includes('github.io')
+
+  if (isGithubMirror) {
+    url = url.replace('github.io', 'gitee.io')
+    label = '🇨🇳 切换大陆节点'
+    title = 'gitee.io 站点'
+  } else {
+    url = url.replace('gitee.io', 'github.io')
+    label = '🌍 切换全球节点'
+    title = 'github.io 站点'
+  }
+
+  return {
+    url,
+    label,
+    title,
+  }
 }
+
+const { label, url, title } = getMirrorConfig()
 </script>
 <style lang="scss" scoped>
 .footer {
