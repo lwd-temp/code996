@@ -12,17 +12,17 @@ body {
 
 @font-face {
   font-family: 'vcr-osd';
-  src: url('https://cdn.jsdelivr.net/gh/hellodigua/cdn/fonts/vcr-osd.ttf');
+  src: url('/sources/fonts/vcr-osd.ttf');
 }
 
 @font-face {
   font-family: 'Pixel';
-  src: url('https://cdn.jsdelivr.net/gh/hellodigua/cdn/fonts/zpix.woff2') format('woff2');
+  src: url('/sources/fonts/zpix.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'xkcd';
-  src: url('https://cdn.jsdelivr.net/gh/hellodigua/cdn/fonts/zpix.woff2') format('woff2');
+  src: url('/sources/fonts/zpix.woff2') format('woff2');
 }
 
 ::selection {
