@@ -61,7 +61,7 @@ npx code996 -o
           <p>1. 脚本端和 web 端均不会发起任何请求以收集数据</p>
           <p>2. 除分析的起始时间、commit结果等通用数据外，URL 本身不泄露项目名等任何关键信息</p>
           <p>
-            3. 所以代码均已开源到
+            3. 所有代码均已开源到
             <a href="https://github.com/hellodigua/code996">github</a>
             ，接受社区监督
           </p>

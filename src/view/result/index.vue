@@ -61,10 +61,10 @@
       <h2>工作时间参照表：</h2>
       <CompareTable />
       <div class="container">
-        <h2 class="mb20">免责声明：</h2>
+        <h2 class="mb20">注意事项：</h2>
         <p>分析结果仅供参考，不代表任何建议</p>
         <p>原始分析数据通过 URL 传输，请慎重分享 URL 给第三方</p>
-        <p>请勿用于正式场合，不接受查水表</p>
+        <p>请勿用于正式场合</p>
       </div>
     </div>
     <Footer />
