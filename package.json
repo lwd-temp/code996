@@ -11,8 +11,8 @@
   "dependencies": {
     "chart.xkcd": "^1.1.13",
     "github-markdown-css": "^5.0.0",
-    "vue": "^3.2.16",
-    "vue-router": "^4.0.12"
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
