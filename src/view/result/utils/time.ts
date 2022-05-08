@@ -1,12 +1,11 @@
 import { TimeCount } from '../../../typings'
-import { getTotalCount, getRadio } from './utils'
 
 /**
  * 解析url参数为标准数据格式
  * @param str 分析参数
  * @returns
  */
-export function parseResult(str: string): TimeCount[] {
+export function parseResult(str: string = ''): TimeCount[] {
   let list: TimeCount[] = []
   str.split(',').forEach((item) => {
     const arr = item.split('_')
@@ -42,39 +41,4 @@ export function parseWeekData(list: TimeCount[]): TimeCount[] {
       count: item?.count || 0,
     }
   })
-}
-
-export function useHour(hourData: TimeCount[]) {
-  // commit 总数
-  const totalCount = hourData.reduce((total, item) => total + item.count, 0)
-
-  return {
-    totalCount,
-  }
-}
-
-export function useWeek(weekData: TimeCount[]) {
-  const workDayData = weekData.slice(0, 5)
-  const saturdayData = weekData[5]
-  const sundayData = weekData[6]
-  // commit 总数
-  const totalCount = getTotalCount(weekData)
-  const commitCount = {
-    workday: getTotalCount(workDayData),
-    saturday: saturdayData.count,
-    sunday: sundayData.count,
-  }
-
-  // commit 比例
-  const commitRatio = {
-    workday: getRadio(commitCount.workday, totalCount),
-    saturday: getRadio(commitCount.saturday, totalCount),
-    sunday: getRadio(commitCount.sunday, totalCount),
-  }
-
-  return {
-    totalCount,
-    commitCount,
-    commitRatio,
-  }
 }

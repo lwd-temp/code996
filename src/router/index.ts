@@ -9,13 +9,13 @@ export const router = createRouter({
       path: '/',
       name: 'index',
       component: Intro,
-      meta: { title: 'CODE996' },
+      meta: { title: 'code996' },
     },
     {
       path: '/result',
       name: 'result',
       component: Result,
-      meta: { title: '分析结果' },
+      meta: { title: 'result | code996' },
     },
   ],
 })

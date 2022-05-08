@@ -2,11 +2,11 @@
   <div class="index">
     <div class="banner">
       <div class="banner-wrapper wrapper">
-        <p class="logo-text mb10">#CODE996</p>
+        <p class="logo-text">#CODE996</p>
         <p class="p2 mb40">
           code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
-        <span class="btn" @click="previewDemo">查看示例</span>
+        <span class="btn" @click="previewDemo">查看示例结果</span>
       </div>
     </div>
     <div class="main wrapper">
@@ -17,9 +17,39 @@
         <article class="markdown-body">
           <div class="p1">用途</div>
           <ul>
-            <li>分析你个人项目的提交时间规律</li>
-            <li>在进入一家新公司后快速了解所负责项目是否有在996</li>
+            <li>分析 git 项目的 commit 提交时间规律</li>
+            <li>入职新公司后了解项目是否存在996迹象</li>
+            <li>在上班的摸鱼时光找点乐子</li>
+            <!-- <li class="todo">判断一个项目中到底谁是卷王</li> -->
           </ul>
+        </article>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="icon-mark">></div>
+        </div>
+        <article class="markdown-body">
+          <div class="p1">如何使用</div>
+          <ul>
+            <li>在项目的根目录，执行以下脚本</li>
+            <pre>/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh)"</pre>
+            <li>如果你拥有 node 环境，也可以直接执行以下命令</li>
+            <pre>
+npx code996 -o
+</pre
+            >
+          </ul>
+        </article>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="icon-mark">#</div>
+        </div>
+        <article class="markdown-body">
+          <div class="p1">它怎样工作</div>
+          <p>1. 使用 git-log 对你的项目进行查询，得到以小时汇总和以天汇总的commit统计结果</p>
+          <p>2. 将本地脚本得到的查询结果转为 URL 参数，并打开 URL 到网页</p>
+          <p>3. 从 URL 拿到数据，并使用一些规则处理，并将结果可视化展现</p>
         </article>
       </div>
       <div class="item">
@@ -27,24 +57,28 @@
           <div class="icon-mark">@</div>
         </div>
         <article class="markdown-body">
-          <div class="p1">如何使用</div>
-          <ul>
-            <li>如果你拥有 node 环境，可以直接执行 npm 命令</li>
-            <pre>
-npx code996
-</pre
-            >
-            <li>其他环境，可以执行以下脚本</li>
-            <pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/test/HEAD/code996.sh)"</pre>
-          </ul>
+          <div class="p1">它安全吗</div>
+          <p>1. 脚本端和 web 端均不会发起任何接口请求以收集数据</p>
+          <p>2. 除分析的起始时间、commit结果等通用数据外，URL 本身不泄露项目名等任何关键信息</p>
+          <p>
+            3. 所有代码均已开源到
+            <a href="https://github.com/hellodigua/code996" target="_blank">github</a>
+            ，接受社区监督
+          </p>
+          <p>
+            4. 也可以查看
+            <a href="https://github.com/hellodigua/code996" target="_blank">README</a>
+            了解更多有关问题
+          </p>
         </article>
       </div>
     </div>
-    <div class="footer wrapper"></div>
+    <Footer />
   </div>
 </template>
 <script setup lang="ts">
 import { router } from '../../router'
+import Footer from '../../public/components/Footer.vue'
 
 const previewDemo = () => {
   router.push({
@@ -61,33 +95,22 @@ const previewDemo = () => {
 .index {
   height: 100%;
   width: 100%;
-  .wrapper {
-    width: 1180px;
-    margin: 0 auto;
+
+  .logo-text {
+    font-size: 7em;
+    color: #de335e;
+    font-family: vcr-osd;
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
   }
-  .banner {
-    &-wrapper {
-      .p2 {
-        font-size: 1.2em;
-      }
-      .btn {
-        display: inline-block;
-        font-size: 1.2em;
-        cursor: pointer;
-        background-color: #212121;
-        padding: 16px 40px;
-        background-color: #de335e;
-        color: #fff;
-        box-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);
-      }
-    }
-  }
+
   .main {
     .item {
       display: flex;
       padding-bottom: 5em;
       .left {
         width: 120px;
+        min-width: 120px;
       }
       .icon-mark {
         font-size: 3.2em;
@@ -110,11 +133,23 @@ const previewDemo = () => {
     }
   }
 
-  .markdown-body ul {
-    padding-left: 0;
-    list-style: inside;
-    pre {
-      margin: 1em 0;
+  .markdown-body {
+    flex: 1;
+    overflow-x: auto;
+    ul {
+      padding-left: 0;
+      list-style: inside;
+      li {
+        margin-bottom: 16px;
+      }
+      pre {
+        display: table-caption;
+        width: 100%;
+        margin: 1em 0;
+      }
+      .todo {
+        text-decoration: line-through;
+      }
     }
   }
 }
@@ -123,10 +158,23 @@ const previewDemo = () => {
   .index {
     .wrapper {
       width: 90%;
-      padding: 0 5%;
+    }
+    .logo-text {
+      font-size: 17vw;
+      margin-bottom: 10px;
     }
     .main {
       display: block !important;
+
+      .item {
+        flex-direction: column;
+        .left {
+          margin-bottom: 20px;
+        }
+        .p1 {
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 }
