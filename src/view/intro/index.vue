@@ -105,6 +105,7 @@ const previewDemo = () => {
       padding-bottom: 5em;
       .left {
         width: 120px;
+        min-width: 120px;
       }
       .icon-mark {
         font-size: 3.2em;
@@ -127,17 +128,23 @@ const previewDemo = () => {
     }
   }
 
-  .markdown-body ul {
-    padding-left: 0;
-    list-style: inside;
-    li {
-      margin-bottom: 16px;
-    }
-    pre {
-      margin: 1em 0;
-    }
-    .todo {
-      text-decoration: line-through;
+  .markdown-body {
+    flex: 1;
+    overflow-x: auto;
+    ul {
+      padding-left: 0;
+      list-style: inside;
+      li {
+        margin-bottom: 16px;
+      }
+      pre {
+        display: table-caption;
+        width: 100%;
+        margin: 1em 0;
+      }
+      .todo {
+        text-decoration: line-through;
+      }
     }
   }
 }

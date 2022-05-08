@@ -27,11 +27,11 @@ const getMirrorConfig = () => {
 
   if (isGithubMirror) {
     url = url.replace('github.io', 'gitee.io')
-    label = '🇨🇳 切换大陆节点'
+    label = '🇨🇳 切换Gitee节点'
     title = 'gitee.io 站点'
   } else {
     url = url.replace('gitee.io', 'github.io')
-    label = '🌍 切换全球节点'
+    label = '🌍 切换Github节点'
     title = 'github.io 站点'
   }
 
