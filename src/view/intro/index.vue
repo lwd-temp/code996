@@ -58,12 +58,17 @@ npx code996 -o
         </div>
         <article class="markdown-body">
           <div class="p1">它安全吗</div>
-          <p>1. 脚本端和 web 端均不会发起任何请求以收集数据</p>
+          <p>1. 脚本端和 web 端均不会发起任何接口请求以收集数据</p>
           <p>2. 除分析的起始时间、commit结果等通用数据外，URL 本身不泄露项目名等任何关键信息</p>
           <p>
             3. 所有代码均已开源到
-            <a href="https://github.com/hellodigua/code996">github</a>
+            <a href="https://github.com/hellodigua/code996" target="_blank">github</a>
             ，接受社区监督
+          </p>
+          <p>
+            4. 也可以查看
+            <a href="https://github.com/hellodigua/code996" target="_blank">README</a>
+            了解更多有关问题
           </p>
         </article>
       </div>
