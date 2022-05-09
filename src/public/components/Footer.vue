@@ -44,16 +44,3 @@ const getMirrorConfig = () => {
 
 const { label, url, title } = getMirrorConfig()
 </script>
-<style lang="scss" scoped>
-.footer {
-  line-height: 2;
-  background: #2a2a2a;
-  text-align: center;
-  margin-top: 3em;
-  padding: 2em 0;
-  font-size: 0.9em;
-  a {
-    color: #de335e;
-  }
-}
-</style>

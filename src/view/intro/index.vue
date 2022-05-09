@@ -3,7 +3,7 @@
     <div class="banner">
       <div class="banner-wrapper wrapper">
         <p class="logo-text">#CODE996</p>
-        <p class="p2 mb40">
+        <p class="p2">
           code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
         <span class="btn" @click="previewDemo">查看示例结果</span>
