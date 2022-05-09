@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import externalGlobals from 'rollup-plugin-external-globals'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,4 +12,16 @@ export default defineConfig({
     },
   },
   base: '/code996/',
+  build: {
+    rollupOptions: {
+      external: ['vue', 'vue-router', 'chart.xkcd'],
+      plugins: [
+        externalGlobals({
+          vue: 'Vue',
+          'vue-router': 'VueRouter',
+          'chart.xkcd': 'chartXkcd',
+        }),
+      ],
+    },
+  },
 })
