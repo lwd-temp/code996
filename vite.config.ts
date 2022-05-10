@@ -12,7 +12,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
-  base: '/code996/',
+  base: './',
   build: {
     rollupOptions: {
       external: ['vue', 'vue-router', 'chart.xkcd'],
