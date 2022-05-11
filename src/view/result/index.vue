@@ -59,7 +59,7 @@
         </div>
       </div>
       <h2>工作时间参照表：</h2>
-      <CompareTable />
+      <CompareTable :index996="result.index996" />
       <div class="container">
         <h2 class="title">注意事项：</h2>
         <p>分析结果仅供参考，不代表任何建议</p>

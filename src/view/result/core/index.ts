@@ -79,13 +79,13 @@ function get996Index({ workHourPl, workWeekPl }: any) {
   let index996Str = ''
 
   if (index996 <= 10) {
-    index996Str = getRandomText(['小伙子工作不饱和啊'])
+    index996Str = getRandomText(['令人羡慕的工作', '恭喜，你们没有福报'])
   } else if (index996 > 10 && index996 <= 50) {
-    index996Str = getRandomText(['你还有剩余价值', '加油，老板的法拉利靠你了'])
+    index996Str = getRandomText(['你还有剩余价值'])
   } else if (index996 > 50 && index996 <= 90) {
-    index996Str = getRandomText(['你背叛了工人阶级！'])
+    index996Str = getRandomText(['你背叛了工人阶级！', '加油，老板的法拉利靠你了'])
   } else if (index996 > 90 && index996 <= 110) {
-    index996Str = getRandomText(['好兄弟，下辈子别996了'])
+    index996Str = getRandomText(['好兄弟，下辈子别996了', '你的福报已经修满了'])
   } else if (index996 > 110) {
     index996Str = getRandomText(['你们想必就是卷王中的卷王吧'])
   }

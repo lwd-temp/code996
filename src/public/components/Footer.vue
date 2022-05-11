@@ -2,7 +2,11 @@
   <div class="footer">
     <div class="wrapper">
       <p>
-        <a :href="url" :title="title">{{ label }}</a>
+        切换镜像节点：
+        <template v-for="item in mirrorList">
+          <a :href="item.url">{{ item.label }}</a>
+          <span>&nbsp;</span>
+        </template>
       </p>
       <p>
         自豪的采用
@@ -18,29 +22,26 @@
   </div>
 </template>
 <script setup lang="ts">
-const getMirrorConfig = () => {
-  let url = window.location.href
-  let label = ''
-  let title = ''
+let url = window.location.href
+let hash = window.location.hash
 
-  const isGithubMirror = window.location.host.includes('github.io')
-
-  if (isGithubMirror) {
-    url = url.replace('github.io', 'gitee.io')
-    label = '🇨🇳 切换Gitee节点'
-    title = 'gitee.io 站点'
-  } else {
-    url = url.replace('gitee.io', 'github.io')
-    label = '🌍 切换Github节点'
-    title = 'github.io 站点'
-  }
-
-  return {
-    url,
-    label,
-    title,
-  }
-}
-
-const { label, url, title } = getMirrorConfig()
+const mirrorList = [
+  {
+    host: 'github.io',
+    url: `https://hellodigua.github.io/code996/${hash}`,
+    label: 'github',
+  },
+  {
+    host: 'gitee.io/',
+    url: `https://hellodigua.gitee.io/code996/${hash}`,
+    label: 'gitee',
+  },
+  {
+    host: 'code996.vercel.app',
+    url: `https://code996.vercel.app/${hash}`,
+    label: 'vercel',
+  },
+].filter((item) => {
+  return !url.includes(item.host)
+})
 </script>
