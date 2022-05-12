@@ -6,7 +6,7 @@
         <h1>#CODE996 Result</h1>
       </div>
     </div>
-    <div class="wrapper main">
+    <div class="main wrapper">
       <div class="top-result container">
         <h1>该项目的996指数是：</h1>
         <div class="result-line">
@@ -115,58 +115,4 @@ onMounted(() => {
   init()
 })
 </script>
-<style lang="scss" scoped>
-.header {
-  padding: 40px 0;
-  width: 100%;
-  background: #2a2a2a;
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .button {
-    display: inline-block;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #212121;
-    padding: 10px 20px;
-    background-color: #444;
-    color: #fff;
-    box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 8px 8px 0px rgb(0 0 0 / 20%);
-    transition: 0.3s all;
-    &:hover {
-      background-color: #4a4a4a;
-      box-shadow: 0px 0px 0px rgb(255 255 255 / 0%), 5px 5px 0px rgb(0 0 0 / 20%);
-    }
-    margin-right: 30px;
-  }
-  h1 {
-    line-height: 48px;
-    color: #999;
-    font-family: vcr-osd;
-    font-weight: normal;
-    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 6px 6px 0px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.main {
-  padding-top: 0;
-  .title {
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .header {
-    padding: 30px 0;
-    .wrapper {
-      flex-direction: column;
-      .button {
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

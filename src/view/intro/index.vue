@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="intro">
     <div class="banner">
       <div class="banner-wrapper wrapper">
         <p class="logo-text">#CODE996</p>
@@ -91,96 +91,9 @@ const previewDemo = () => {
     query: {
       time: '2021-01-01_2022-01-01',
       hour: '5_08,19_09,44_10,51_11,7_13,63_14,71_15,49_16,75_17,34_18,15_19,4_20,1_21,1_22',
-      week: '65_Fri,50_Mon,1_Sun,96_Thu,119_Tue,108_Wed',
+      week: '50_1,119_2,108_3,96_4,65_5,1_6',
     },
   })
 }
 </script>
-<style lang="scss" scoped>
-.index {
-  height: 100%;
-  width: 100%;
-
-  .logo-text {
-    font-size: 7em;
-    color: #de335e;
-    font-family: vcr-osd;
-    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
-  }
-
-  .main {
-    .item {
-      display: flex;
-      padding-bottom: 5em;
-      .left {
-        width: 120px;
-        min-width: 120px;
-      }
-      .icon-mark {
-        font-size: 3.2em;
-        color: #de335e;
-        font-family: vcr-osd;
-        background-color: #2a2a2a;
-        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 5px 5px 0px rgba(0, 0, 0, 0.2);
-        width: 80px;
-        height: 80px;
-        text-align: center;
-        line-height: 80px;
-      }
-      .p1 {
-        font-size: 1.6em;
-        font-weight: 500;
-        color: #fff;
-        line-height: 1;
-        margin-bottom: 1.3em;
-      }
-    }
-  }
-
-  .markdown-body {
-    flex: 1;
-    overflow-x: auto;
-    ul {
-      padding-left: 0;
-      list-style: inside;
-      li {
-        margin-bottom: 16px;
-      }
-      pre {
-        display: table-caption;
-        width: 100%;
-        margin: 1em 0;
-      }
-      .todo {
-        text-decoration: line-through;
-      }
-    }
-  }
-}
-
-@media (max-width: 700px) {
-  .index {
-    .wrapper {
-      width: 90%;
-    }
-    .logo-text {
-      font-size: 17vw;
-      margin-bottom: 10px;
-    }
-    .main {
-      display: block !important;
-
-      .item {
-        flex-direction: column;
-        .left {
-          margin-bottom: 20px;
-        }
-        .p1 {
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>
