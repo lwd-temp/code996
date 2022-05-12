@@ -41,7 +41,5 @@ const mirrorList = [
     url: `https://code996.vercel.app/${hash}`,
     label: 'vercel',
   },
-].filter((item) => {
-  return !url.includes(item.host)
-})
+].filter((item) => !url.includes(item.host))
 </script>

@@ -196,6 +196,45 @@ body {
       }
     }
   }
+
+  .table-box {
+    width: 100%;
+    overflow: auto;
+    margin-top: 10px;
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      .l {
+        min-width: 10em;
+      }
+      tr {
+        border-bottom: 1px solid #555;
+        td {
+          padding: 10px;
+          text-align: center;
+        }
+      }
+      th {
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #999;
+      }
+      td {
+        text-align: center;
+        padding: 10px;
+      }
+      .active {
+        color: #de335e;
+      }
+    }
+    .tips {
+      font-size: 14px;
+      color: #999;
+      margin-top: 10px;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {

@@ -87,7 +87,7 @@ function get996Index({ workHourPl, workWeekPl }: any) {
   } else if (index996 > 90 && index996 <= 110) {
     index996Str = getRandomText(['好兄弟，下辈子别996了', '你的福报已经修满了'])
   } else if (index996 > 110) {
-    index996Str = getRandomText(['你们想必就是卷王中的卷王吧'])
+    index996Str = getRandomText(['你们想必就是卷王中的卷王吧', '其实你还有其他选择'])
   }
 
   return { index996, index996Str, overTimeRadio }
