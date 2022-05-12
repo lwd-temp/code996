@@ -3,7 +3,7 @@
     <div class="banner">
       <div class="banner-wrapper wrapper">
         <p class="logo-text">#CODE996</p>
-        <p class="p2 mb40">
+        <p class="p2">
           code996 是一个命令行脚本，它可以计算 git 项目的 commit 时间分布规律，进而推导出这个项目的工作强度。
         </p>
         <span class="btn" @click="previewDemo">查看示例结果</span>
@@ -33,9 +33,14 @@
           <ul>
             <li>在项目的根目录，执行以下脚本</li>
             <pre>/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh)"</pre>
-            <li>如果你拥有 node 环境，也可以直接执行以下命令</li>
+            <li>如果你拥有 node 环境，可以直接执行以下命令</li>
             <pre>
 npx code996 -o
+</pre
+            >
+            <li>如果以上方法都不管用，也可以下载该脚本后，直接在git仓库执行</li>
+            <pre>
+https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh
 </pre
             >
           </ul>
