@@ -26,13 +26,13 @@ export function parseResult(str: string = ''): TimeCount[] {
  */
 export function parseWeekData(list: TimeCount[]): TimeCount[] {
   const templateList = [
-    { name: '周一', key: 'Mon' },
-    { name: '周二', key: 'Tue' },
-    { name: '周三', key: 'Wed' },
-    { name: '周四', key: 'Thu' },
-    { name: '周五', key: 'Fri' },
-    { name: '周六', key: 'Sat' },
-    { name: '周日', key: 'Sun' },
+    { name: '周一', key: '1' },
+    { name: '周二', key: '2' },
+    { name: '周三', key: '3' },
+    { name: '周四', key: '4' },
+    { name: '周五', key: '5' },
+    { name: '周六', key: '6' },
+    { name: '周日', key: '7' },
   ]
   return templateList.map((tem) => {
     const item = list.find((i) => i.time === tem.key) as TimeCount
