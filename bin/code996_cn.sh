@@ -95,12 +95,11 @@ for i in "${by_day_output[@]}"
 RED='\033[1;91m'
 NC='\033[0m' # No Color
 
-echo -e "统计时间范围：$time_start 至 $time_end"
+echo -e "${RED}统计时间范围：$time_start 至 $time_end"
 
 for i in "${by_day_output[@]}"
     do
         echo
-        # echo -e "${RED}By Day:"
         echo -e "${RED}一周七天 commit 分布"
         echo -e "  总提交次数 星期\n$i"|column -t
         by_day_result=`echo "$i"|sed -E 's/^ +//g'|sed "s/ /_/g"|tr '\n' ','`

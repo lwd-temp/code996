@@ -90,7 +90,7 @@ for i in "${by_day_output[@]}"
 RED='\033[1;91m'
 NC='\033[0m' # No Color
 
-echo -e "Calculation time range：$time_start to $time_end"
+echo -e "${RED}Calculation time range：$time_start to $time_end"
 
 for i in "${by_day_output[@]}"
     do

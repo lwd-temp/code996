@@ -26,6 +26,7 @@ const props = defineProps({
   index996: {
     type: Number,
   },
+  isStandard: Boolean,
 })
 
 const tableConfig = [
@@ -57,7 +58,7 @@ watch(
 )
 
 const getActive = (index: number) => {
-  return nearValue.value === index ? 'active' : ''
+  return nearValue.value === index && props.isStandard ? 'active' : ''
 }
 </script>
 <style lang="scss" scoped></style>

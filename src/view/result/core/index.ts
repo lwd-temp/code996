@@ -30,7 +30,7 @@ export function getRoutesMeta() {
  * 获取分析结果
  */
 export function getResult() {
-  const { hourData, weekData } = getRoutesMeta()
+  const { hourData, weekData, totalCount } = getRoutesMeta()
   const { openingTime, closingTime, workHourPl } = getHourResult(hourData)
   const { workDayTypeValue, workWeekPl } = getWeekResult(weekData)
   const { index996, index996Str, overTimeRadio } = get996Index({ workHourPl, workWeekPl, hourData })
@@ -41,7 +41,7 @@ export function getResult() {
   const _closingTime = Number(closingTime?.time) % 12
 
   // 是否为正常项目（开源项目计算不准确）
-  const isStandardProject = index996 < 160
+  const isStandard = index996 < 160 || totalCount > 50
 
   return {
     // 工作类型模板
@@ -49,10 +49,11 @@ export function getResult() {
     workingTypeStr: `早${_openingTime || '?'}晚${_closingTime || '?'}一周${workDayTypeValue || '?'}天`,
     workHourPl,
     workWeekPl,
+    totalCount,
     index996,
     index996Str,
     overTimeRadio,
-    isStandardProject,
+    isStandard,
     MSG_TYPE,
   }
 }
