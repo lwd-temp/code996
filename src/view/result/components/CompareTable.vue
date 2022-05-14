@@ -44,8 +44,8 @@ const list: any[] = [
   { type: '966', value: 9, codeTime: 7.5, weekTime: 45, overtime: 7.5, overtimeRate: 16, index996: 48 },
   { type: '995', value: 12, codeTime: 9.5, weekTime: 47.5, overtime: 10, overtimeRate: 21, index996: 63 },
   { type: '996', value: 12, codeTime: 9.5, weekTime: 57, overtime: 19.5, overtimeRate: 34, index996: 100 },
-  { type: '997', value: 12, codeTime: 9.5, weekTime: 66.5, overtime: 29, overtimeRate: 50, index996: 130 },
-  { type: '9126', value: 15, codeTime: 12, weekTime: 75, overtime: 37.5, overtimeRate: 100, index996: 150 },
+  { type: '997', value: 12, codeTime: 9.5, weekTime: 66.5, overtime: 29, overtimeRate: 44, index996: 130 },
+  { type: '9126', value: 15, codeTime: 12.5, weekTime: 75, overtime: 37.5, overtimeRate: 50, index996: 150 },
 ]
 
 const nearValue = ref(0)
