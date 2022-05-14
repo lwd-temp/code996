@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="intro">
     <div class="banner">
       <div class="banner-wrapper wrapper">
         <p class="logo-text">#CODE996</p>
@@ -17,7 +17,7 @@
         <article class="markdown-body">
           <div class="p1">用途</div>
           <ul>
-            <li>分析 git 项目的 commit 提交时间规律</li>
+            <li>分析 Git 项目的 commit 提交时间规律</li>
             <li>入职新公司后了解项目是否存在996迹象</li>
             <li>在上班的摸鱼时光找点乐子</li>
             <!-- <li class="todo">判断一个项目中到底谁是卷王</li> -->
@@ -31,18 +31,16 @@
         <article class="markdown-body">
           <div class="p1">如何使用</div>
           <ul>
-            <li>在项目的根目录，执行以下脚本</li>
-            <pre>/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh)"</pre>
-            <li>如果你拥有 node 环境，可以直接执行以下命令</li>
-            <pre>
-npx code996 -o
-</pre
-            >
-            <li>如果以上方法都不管用，也可以下载该脚本后，直接在git仓库执行</li>
-            <pre>
-https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh
-</pre
-            >
+            <p>Mac/Linux 用户，在 Git 项目的根目录，执行以下命令：</p>
+            <div class="p2">
+              <pre>/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh)"</pre>
+            </div>
+            <p>
+              Windows用户，
+              <a href="https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh">下载该脚本</a>
+              后，直接在 Git 项目目录执行：
+            </p>
+            <pre>sh code996.sh</pre>
           </ul>
         </article>
       </div>
@@ -63,7 +61,7 @@ https://cdn.jsdelivr.net/npm/code996@latest/bin/code996.sh
         </div>
         <article class="markdown-body">
           <div class="p1">它安全吗</div>
-          <p>1. 脚本端和 web 端均不会发起任何接口请求以收集数据</p>
+          <p>1. 脚本端和 Web 端均不会发起任何接口请求以收集数据</p>
           <p>2. 除分析的起始时间、commit结果等通用数据外，URL 本身不泄露项目名等任何关键信息</p>
           <p>
             3. 所有代码均已开源到
@@ -91,96 +89,9 @@ const previewDemo = () => {
     query: {
       time: '2021-01-01_2022-01-01',
       hour: '5_08,19_09,44_10,51_11,7_13,63_14,71_15,49_16,75_17,34_18,15_19,4_20,1_21,1_22',
-      week: '65_Fri,50_Mon,1_Sun,96_Thu,119_Tue,108_Wed',
+      week: '50_1,119_2,108_3,96_4,65_5,1_6',
     },
   })
 }
 </script>
-<style lang="scss" scoped>
-.index {
-  height: 100%;
-  width: 100%;
-
-  .logo-text {
-    font-size: 7em;
-    color: #de335e;
-    font-family: vcr-osd;
-    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 10px 10px 0px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
-  }
-
-  .main {
-    .item {
-      display: flex;
-      padding-bottom: 5em;
-      .left {
-        width: 120px;
-        min-width: 120px;
-      }
-      .icon-mark {
-        font-size: 3.2em;
-        color: #de335e;
-        font-family: vcr-osd;
-        background-color: #2a2a2a;
-        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0), 5px 5px 0px rgba(0, 0, 0, 0.2);
-        width: 80px;
-        height: 80px;
-        text-align: center;
-        line-height: 80px;
-      }
-      .p1 {
-        font-size: 1.6em;
-        font-weight: 500;
-        color: #fff;
-        line-height: 1;
-        margin-bottom: 1.3em;
-      }
-    }
-  }
-
-  .markdown-body {
-    flex: 1;
-    overflow-x: auto;
-    ul {
-      padding-left: 0;
-      list-style: inside;
-      li {
-        margin-bottom: 16px;
-      }
-      pre {
-        display: table-caption;
-        width: 100%;
-        margin: 1em 0;
-      }
-      .todo {
-        text-decoration: line-through;
-      }
-    }
-  }
-}
-
-@media (max-width: 700px) {
-  .index {
-    .wrapper {
-      width: 90%;
-    }
-    .logo-text {
-      font-size: 17vw;
-      margin-bottom: 10px;
-    }
-    .main {
-      display: block !important;
-
-      .item {
-        flex-direction: column;
-        .left {
-          margin-bottom: 20px;
-        }
-        .p1 {
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

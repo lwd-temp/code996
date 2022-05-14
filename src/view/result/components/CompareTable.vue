@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { watch } from '@vue/runtime-core'
 import { ref } from 'vue'
-import { findNear } from '../utils/util'
+import { findNear } from '../core/utils'
 
 const props = defineProps({
   index996: {

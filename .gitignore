@@ -16,8 +16,8 @@ yarn-error.log*
 
 # Editor
 .vscode/
-# 仅同步 settings
 !.vscode/settings.json
 
 # Project
 dist/
+stats.html
