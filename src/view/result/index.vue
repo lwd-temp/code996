@@ -48,26 +48,26 @@
         <div class="section">
           <div class="item">
             <h2>按小时commit分布</h2>
-            <BarChart :data="hourResult" />
+            <bar-chart :data="hourResult" />
           </div>
           <div class="item" v-if="result.isStandard">
             <h2>加班/工作commit占比（按小时）</h2>
-            <PieChart :data="workHourRadio" />
+            <pie-chart :data="workHourRadio" />
           </div>
         </div>
         <div class="section">
           <div class="item">
             <h2>按天commit分布</h2>
-            <BarChart :data="weekResult" />
+            <bar-chart :data="weekResult" />
           </div>
           <div class="item" v-if="result.isStandard">
             <h2>加班/工作commit占比（按天）</h2>
-            <PieChart :data="workWeekRadio" />
+            <pie-chart :data="workWeekRadio" />
           </div>
         </div>
       </div>
       <h2 id="compare-table">工作时间参照表：</h2>
-      <CompareTable :index996="result.index996" :isStandard="result.isStandard" />
+      <compare-table />
       <div class="container">
         <h2 class="title">注意事项：</h2>
         <p>分析结果仅供参考，不代表任何建议</p>
@@ -75,7 +75,7 @@
         <p>请勿用于正式场合</p>
       </div>
     </div>
-    <Footer />
+    <common-footer />
   </div>
 </template>
 <script setup lang="ts">
@@ -85,7 +85,7 @@ import { router } from '../../router'
 import BarChart from './components/BarChart.vue'
 import PieChart from './components/PieChart.vue'
 import CompareTable from './components/CompareTable.vue'
-import Footer from '../../public/components/Footer.vue'
+import CommonFooter from '../../public/components/CommonFooter.vue'
 import { getResult, getRoutesMeta } from './core'
 import { checkUrlQueryAndRedirect } from './core/url-helper'
 

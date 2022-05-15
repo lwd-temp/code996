@@ -50,7 +50,7 @@
         </div>
         <article class="markdown-body">
           <div class="p1">它怎样工作</div>
-          <p>1. 使用 git-log 对你的项目进行查询，得到以小时汇总和以天汇总的commit统计结果</p>
+          <p>1. 使用 git-log 对项目当前的分支进行查询，得到以小时汇总和以天汇总的 commit 统计结果</p>
           <p>2. 将本地脚本得到的查询结果转为 URL 参数，并打开 URL 到浏览器</p>
           <p>3. 从 URL 拿到数据，并使用一些规则处理，并将结果可视化展现</p>
         </article>
@@ -97,12 +97,12 @@
         </article>
       </div>
     </div>
-    <Footer />
+    <common-footer />
   </div>
 </template>
 <script setup lang="ts">
 import { router } from '../../router'
-import Footer from '../../public/components/Footer.vue'
+import CommonFooter from '../../public/components/CommonFooter.vue'
 
 const previewDemo = () => {
   router.push({
