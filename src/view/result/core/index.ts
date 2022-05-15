@@ -33,20 +33,20 @@ export function getResult() {
   const { hourData, weekData, totalCount } = getRoutesMeta()
   const { openingTime, closingTime, workHourPl } = getHourResult(hourData)
   const { workDayTypeValue, workWeekPl } = getWeekResult(weekData)
-  const { index996, index996Str, overTimeRadio } = get996Index({ workHourPl, workWeekPl, hourData })
+  const { index996, index996Str, overTimeRadio, isStandard } = get996Index({ workHourPl, workWeekPl, hourData })
 
   const MSG_TYPE = checkDataIsRight({ workHourPl, workWeekPl, index996, overTimeRadio })
 
   const _openingTime = Number(openingTime?.time)
   const _closingTime = Number(closingTime?.time) % 12
 
-  // 是否为正常项目（开源项目计算不准确）
-  const isStandard = index996 < 160 || totalCount > 50
-
   return {
     // 工作类型模板
     workingType: `${_openingTime || '?'}${_closingTime || '?'}${workDayTypeValue || '?'}`,
     workingTypeStr: `早${_openingTime || '?'}晚${_closingTime || '?'}一周${workDayTypeValue || '?'}天`,
+    openingTime,
+    closingTime,
+    workDayTypeValue,
     workHourPl,
     workWeekPl,
     totalCount,
@@ -61,7 +61,7 @@ export function getResult() {
 /**
  * 计算996指数
  */
-function get996Index({ workHourPl, workWeekPl, hourData }: any) {
+export function get996Index({ workHourPl, workWeekPl, hourData }: any) {
   const y = workHourPl[0].count
   const x = workHourPl[1].count
   const m = workWeekPl[0].count
@@ -85,6 +85,9 @@ function get996Index({ workHourPl, workWeekPl, hourData }: any) {
   // 996指数
   const index996 = overTimeRadio * 3
 
+  // 是否为正常项目（开源项目计算不准确）
+  const isStandard = index996 < 160 && totalCount > 50
+
   let index996Str = ''
 
   if (index996 <= 10) {
@@ -99,7 +102,7 @@ function get996Index({ workHourPl, workWeekPl, hourData }: any) {
     index996Str = getRandomText(['你们想必就是卷王中的卷王吧'])
   }
 
-  return { index996, index996Str, overTimeRadio }
+  return { index996, index996Str, overTimeRadio, isStandard }
 }
 
 /**
