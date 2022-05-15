@@ -68,11 +68,6 @@
             <a href="https://github.com/hellodigua/code996" target="_blank">github</a>
             ，接受社区监督
           </p>
-          <p>
-            4. 也可以查看
-            <a href="https://github.com/hellodigua/code996" target="_blank">README</a>
-            了解更多有关问题
-          </p>
         </article>
       </div>
       <div class="item">

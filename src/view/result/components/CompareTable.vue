@@ -18,14 +18,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { watch } from '@vue/runtime-core'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { findNear } from '../core/utils'
 
 const props = defineProps({
-  index996: {
-    type: Number,
-  },
+  index996: Number,
   isStandard: Boolean,
 })
 
@@ -49,6 +46,7 @@ const list: any[] = [
 ]
 
 const nearValue = ref(0)
+nearValue.value = findNear(props.index996)
 
 watch(
   () => props.index996,
