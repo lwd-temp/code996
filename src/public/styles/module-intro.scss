@@ -66,13 +66,26 @@
         line-height: 1;
         margin-bottom: 1.3em;
       }
+      .p2 {
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #fff;
+      }
     }
   }
 
   .markdown-body {
+    flex: 1;
+    width: 100%;
     font-family: 'Pixel', Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
     background-color: transparent;
     color: #ddd;
+
+    .overflow-x {
+      width: 100%;
+      overflow-x: auto;
+    }
+
     pre {
       background-color: #2a2a2a;
     }
@@ -80,21 +93,15 @@
     a {
       color: #de335e;
     }
-  }
-
-  .markdown-body {
-    flex: 1;
 
     ul {
       padding-left: 0;
       list-style: inside;
+      margin-bottom: 3em;
       li {
         margin-bottom: 16px;
       }
-      .p2 {
-        width: 100%;
-        overflow-x: auto;
-      }
+
       pre {
         display: table-caption;
         width: 100%;

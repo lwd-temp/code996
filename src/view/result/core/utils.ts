@@ -28,8 +28,7 @@ export function getRandomText(texts: string[] = []): string {
 /**
  * 寻找最接近的数字
  */
-export function findNear(num: number = 0): number {
-  const list = [-21, 0, 48, 63, 100, 130, 150]
+export function findNear(num: number = 0, list: number[] = []): number {
   let min = Number.MAX_VALUE
   let index = 0
   for (let i = 0; i < list.length; i++) {

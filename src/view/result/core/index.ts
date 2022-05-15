@@ -30,29 +30,30 @@ export function getRoutesMeta() {
  * 获取分析结果
  */
 export function getResult() {
-  const { hourData, weekData } = getRoutesMeta()
+  const { hourData, weekData, totalCount } = getRoutesMeta()
   const { openingTime, closingTime, workHourPl } = getHourResult(hourData)
   const { workDayTypeValue, workWeekPl } = getWeekResult(weekData)
-  const { index996, index996Str, overTimeRadio } = get996Index({ workHourPl, workWeekPl, hourData })
+  const { index996, index996Str, overTimeRadio, isStandard } = get996Index({ workHourPl, workWeekPl, hourData })
 
   const MSG_TYPE = checkDataIsRight({ workHourPl, workWeekPl, index996, overTimeRadio })
 
   const _openingTime = Number(openingTime?.time)
   const _closingTime = Number(closingTime?.time) % 12
 
-  // 是否为正常项目（开源项目计算不准确）
-  const isStandardProject = index996 < 160
-
   return {
     // 工作类型模板
     workingType: `${_openingTime || '?'}${_closingTime || '?'}${workDayTypeValue || '?'}`,
     workingTypeStr: `早${_openingTime || '?'}晚${_closingTime || '?'}一周${workDayTypeValue || '?'}天`,
+    openingTime,
+    closingTime,
+    workDayTypeValue,
     workHourPl,
     workWeekPl,
+    totalCount,
     index996,
     index996Str,
     overTimeRadio,
-    isStandardProject,
+    isStandard,
     MSG_TYPE,
   }
 }
@@ -60,7 +61,7 @@ export function getResult() {
 /**
  * 计算996指数
  */
-function get996Index({ workHourPl, workWeekPl, hourData }: any) {
+export function get996Index({ workHourPl, workWeekPl, hourData }: any) {
   const y = workHourPl[0].count
   const x = workHourPl[1].count
   const m = workWeekPl[0].count
@@ -84,6 +85,9 @@ function get996Index({ workHourPl, workWeekPl, hourData }: any) {
   // 996指数
   const index996 = overTimeRadio * 3
 
+  // 是否为正常项目（开源项目计算不准确）
+  const isStandard = index996 < 160 && totalCount > 50
+
   let index996Str = ''
 
   if (index996 <= 10) {
@@ -91,14 +95,14 @@ function get996Index({ workHourPl, workWeekPl, hourData }: any) {
   } else if (index996 > 10 && index996 <= 50) {
     index996Str = getRandomText(['你还有剩余价值'])
   } else if (index996 > 50 && index996 <= 90) {
-    index996Str = getRandomText(['你背叛了工人阶级！', '加油，老板的法拉利靠你了'])
+    index996Str = getRandomText(['加油，老板的法拉利靠你了'])
   } else if (index996 > 90 && index996 <= 110) {
     index996Str = getRandomText(['好兄弟，下辈子别996了', '你的福报已经修满了'])
   } else if (index996 > 110) {
-    index996Str = getRandomText(['你们想必就是卷王中的卷王吧', '其实你还有其他选择'])
+    index996Str = getRandomText(['你们想必就是卷王中的卷王吧'])
   }
 
-  return { index996, index996Str, overTimeRadio }
+  return { index996, index996Str, overTimeRadio, isStandard }
 }
 
 /**

@@ -8,22 +8,26 @@
     </div>
     <div class="main wrapper">
       <div class="top-result container">
-        <h1 v-if="result.isStandardProject">该项目的996指数是：</h1>
+        <h1 v-if="result.isStandard">该项目的996指数是：</h1>
         <div class="result-line">
-          <div class="score-box" v-if="result.isStandardProject">
+          <div class="score-box" v-if="result.isStandard">
             <div class="score-number">{{ result.index996 }}</div>
             <div class="subtitle">{{ result.index996Str }}</div>
           </div>
           <div class="content">
-            <p v-if="result.isStandardProject">
+            <p v-if="result.isStandard">
               推测你们的工作时间类型为：
               <span class="p1">{{ result.workingType }}</span>
               <span class="p2">({{ result.workingTypeStr }})</span>
             </p>
-            <p v-if="result.isStandardProject">
+            <p v-if="result.isStandard">
               推测你们的加班时间占比为：
               <span class="p1">{{ result.overTimeRadio }}%</span>
               <span class="p2" v-if="result.index996 < 0">(工作不饱和)</span>
+            </p>
+            <p v-if="!result.isStandard">
+              <span v-if="result.totalCount <= 50">该项目的commit数量过少，只显示基本信息</span>
+              <span v-else>该项目为开源项目，只显示基本信息</span>
             </p>
             <p>
               总 commit 数：
@@ -35,7 +39,7 @@
             </p>
           </div>
         </div>
-        <p class="exp" v-if="result.isStandardProject">
+        <p class="exp" v-if="result.isStandard">
           996指数：为0则不加班，值越大代表加班越严重，996工作制对应的值为100，负值说明工作非常轻松。
           <a @click="scrollTo">具体可参考下方表格</a>
         </p>
@@ -44,26 +48,26 @@
         <div class="section">
           <div class="item">
             <h2>按小时commit分布</h2>
-            <BarChart :data="hourResult" />
+            <bar-chart :data="hourResult" />
           </div>
-          <div class="item">
+          <div class="item" v-if="result.isStandard">
             <h2>加班/工作commit占比（按小时）</h2>
-            <PieChart :data="workHourRadio" />
+            <pie-chart :data="workHourRadio" />
           </div>
         </div>
         <div class="section">
           <div class="item">
             <h2>按天commit分布</h2>
-            <BarChart :data="weekResult" />
+            <bar-chart :data="weekResult" />
           </div>
-          <div class="item">
+          <div class="item" v-if="result.isStandard">
             <h2>加班/工作commit占比（按天）</h2>
-            <PieChart :data="workWeekRadio" />
+            <pie-chart :data="workWeekRadio" />
           </div>
         </div>
       </div>
       <h2 id="compare-table">工作时间参照表：</h2>
-      <CompareTable :index996="result.index996" />
+      <compare-table />
       <div class="container">
         <h2 class="title">注意事项：</h2>
         <p>分析结果仅供参考，不代表任何建议</p>
@@ -71,7 +75,7 @@
         <p>请勿用于正式场合</p>
       </div>
     </div>
-    <Footer />
+    <common-footer />
   </div>
 </template>
 <script setup lang="ts">
@@ -81,7 +85,7 @@ import { router } from '../../router'
 import BarChart from './components/BarChart.vue'
 import PieChart from './components/PieChart.vue'
 import CompareTable from './components/CompareTable.vue'
-import Footer from '../../public/components/Footer.vue'
+import CommonFooter from '../../public/components/CommonFooter.vue'
 import { getResult, getRoutesMeta } from './core'
 import { checkUrlQueryAndRedirect } from './core/url-helper'
 
@@ -93,16 +97,8 @@ const result = ref<any>({})
 
 function init() {
   const { hourData, weekData, timeStr, totalCount } = getRoutesMeta()
-  const {
-    workingType,
-    workingTypeStr,
-    index996,
-    index996Str,
-    overTimeRadio,
-    isStandardProject,
-    workHourPl,
-    workWeekPl,
-  } = getResult()
+  const { workingType, workingTypeStr, index996, index996Str, overTimeRadio, isStandard, workHourPl, workWeekPl } =
+    getResult()
 
   hourResult.value = [...hourData]
   weekResult.value = [...weekData]
@@ -117,7 +113,7 @@ function init() {
     index996,
     index996Str,
     overTimeRadio,
-    isStandardProject,
+    isStandard,
   }
 }
 
