@@ -86,7 +86,7 @@ export function get996Index({ workHourPl, workWeekPl, hourData }: any) {
   const index996 = overTimeRadio * 3
 
   // 是否为正常项目（开源项目计算不准确）
-  const isStandard = index996 < 160 && totalCount > 50
+  const isStandard = index996 < 200 && totalCount > 50
 
   let index996Str = ''
 
@@ -97,7 +97,7 @@ export function get996Index({ workHourPl, workWeekPl, hourData }: any) {
   } else if (index996 > 50 && index996 <= 90) {
     index996Str = getRandomText(['加油，老板的法拉利靠你了'])
   } else if (index996 > 90 && index996 <= 110) {
-    index996Str = getRandomText(['好兄弟，下辈子别996了', '你的福报已经修满了'])
+    index996Str = getRandomText(['你的福报已经修满了'])
   } else if (index996 > 110) {
     index996Str = getRandomText(['你们想必就是卷王中的卷王吧'])
   }
