@@ -4,7 +4,7 @@
       <div class="banner-wrapper wrapper">
         <p class="logo-text">#CODE996</p>
         <p class="p2">
-          code996 是一个命令行脚本，它可以统计 Git 项目的 commit 时间分布，进而推导出这个项目的工作强度。
+          code996 是一个分析工具，它可以统计 Git 项目的 commit 时间分布，进而推导出这个项目的编码工作强度。
         </p>
         <span class="btn" @click="previewDemo">查看示例结果</span>
       </div>

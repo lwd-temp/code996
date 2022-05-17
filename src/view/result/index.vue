@@ -12,7 +12,7 @@
         <div class="result-line">
           <div class="score-box" v-if="result.isStandard">
             <div class="score-number">{{ result.index996 }}</div>
-            <div class="subtitle">{{ result.index996Str }}</div>
+            <!-- <div class="subtitle">{{ result.index996Str }}</div> -->
           </div>
           <div class="content">
             <p v-if="result.isStandard">
