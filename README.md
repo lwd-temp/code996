@@ -1,8 +1,8 @@
 # code996
 
-code996 是一个命令行脚本，它可以统计 Git 项目的 commit 时间分布，进而推导出这个项目的工作强度。
+code996 是一个分析工具，它可以统计 Git 项目的 commit 时间分布，进而推导出这个项目的编码工作强度。
 
-预览： https://hellodigua.github.io/code996/
+Preview：https://hellodigua.github.io/code996/
 
 ## 用途
 
@@ -30,13 +30,16 @@ Windows 用户：
 sh code996.sh
 ```
 
-<!-- <details>
-<summary>展开查看更多命令</summary>
+## 预览
 
-```
-```
+分析项目的基本情况：
+![](./public/preview/1.png)
 
-</details> -->
+通过图表查看 commit 提交分布：
+![](./public/preview/2.png)
+
+对比项目工作时间类型：
+![](./public/preview/3.png)
 
 ## 它怎样工作
 
