@@ -16,7 +16,7 @@ Mac 或 Linux 用户：
 
 **在 Git 项目的根目录**，执行以下命令：
 
-```
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"
 ```
 
@@ -26,20 +26,23 @@ Windows 用户：
 
 然后将该脚本移至要分析的 Git 项目目录，并执行以下命令：
 
-```
+```sh
 sh code996.sh
 ```
 
 ## 预览
 
 分析项目的基本情况：
-![](./public/preview/1.png)
+
+![basic](./public/preview/1.png)
 
 通过图表查看 commit 提交分布：
-![](./public/preview/2.png)
+
+![chart](./public/preview/2.png)
 
 对比项目工作时间类型：
-![](./public/preview/3.png)
+
+![reference](./public/preview/3.png)
 
 ## 它怎样工作
 
@@ -76,7 +79,7 @@ sh code996.sh
 
 ### Q：我有更好的 idea
 
-任何想法和意见都欢迎交流，也欢迎 fork 之后自行改造。
+任何想法和意见都欢迎交流，也欢迎 Fork 之后自行改造。
 
 ## 免责声明
 
@@ -84,15 +87,15 @@ sh code996.sh
 
 我们列出了如下一些使用后可能发生的后果，请悉知。
 
-- 计算机死机，卡顿，重启。
-- 蓝屏，白屏，黑屏，闪屏。
-- 被老板或同事看到你在摸鱼。
-- 被同事通过 code996 发现你过去在摸鱼。
-- 泄漏机密信息被安全部门处理。
-- 上班迟到。
-- 被毕业。
-- 股市暴跌。
-- 地球爆炸。
+- 计算机死机，卡顿，重启
+- 蓝屏，白屏，黑屏，闪屏
+- 被老板或同事看到你在摸鱼
+- 被同事通过 code996 发现你过去在摸鱼
+- 泄漏机密信息被安全部门处理
+- 上班迟到
+- 被毕业
+- 股市暴跌
+- 地球爆炸
 
 ## 使用许可
 

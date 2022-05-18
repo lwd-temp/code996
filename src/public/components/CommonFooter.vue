@@ -29,17 +29,17 @@ const mirrorList = [
   {
     host: 'github.io',
     url: `https://hellodigua.github.io/code996/${hash}`,
-    label: 'github',
+    label: 'GitHub',
   },
   {
     host: 'gitee.io/',
     url: `https://hellodigua.gitee.io/code996/${hash}`,
-    label: 'gitee',
+    label: 'Gitee',
   },
   {
     host: 'code996.vercel.app',
     url: `https://code996.vercel.app/${hash}`,
-    label: 'vercel',
+    label: 'Vercel',
   },
 ].filter((item) => !url.includes(item.host))
 </script>

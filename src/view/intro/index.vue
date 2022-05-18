@@ -38,7 +38,7 @@
               >
             </div>
             <p>
-              Windows用户，
+              Windows 用户，
               <a href="https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh">下载该脚本</a>
               后，然后将该脚本移至要分析的 Git 项目目录，并执行以下命令：
             </p>
@@ -67,7 +67,7 @@
           <p>2. 除分析的起始时间、commit结果等通用数据外，URL 本身不泄露如项目名等敏感信息</p>
           <p>
             3. 所有代码均已开源到
-            <a href="https://github.com/hellodigua/code996" target="_blank">github</a>
+            <a href="https://github.com/hellodigua/code996" target="_blank">GitHub</a>
             ，接受社区监督
           </p>
         </article>
@@ -94,7 +94,7 @@
           </ul>
           <p class="p2">Q：我有更好的 idea</p>
           <ul>
-            <li>任何想法和意见都欢迎交流，也欢迎 fork 之后自行改造。</li>
+            <li>任何想法和意见都欢迎交流，也欢迎 Fork 之后自行改造。</li>
           </ul>
         </article>
       </div>
