@@ -128,5 +128,6 @@ echo -e "${NC}You can manually click the url below when you want to see the resu
 echo -e "${RED}$github_url"
 echo -e "${NC}vercel server："
 echo -e "${RED}$vercel_url"
+echo -e "${NC}"
 
 $open_url "$github_url"
