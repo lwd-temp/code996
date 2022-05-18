@@ -8,7 +8,7 @@
     </div>
     <div class="main wrapper">
       <div class="top-result container">
-        <h1 v-if="result.isStandard">该项目的996指数是：</h1>
+        <h1 v-if="result.isStandard">该项目的 996 指数是：</h1>
         <div class="result-line">
           <div class="score-box" v-if="result.isStandard">
             <div class="score-number">{{ result.index996 }}</div>
@@ -26,7 +26,7 @@
               <span class="p2" v-if="result.index996 < 0">(工作不饱和)</span>
             </p>
             <p v-if="!result.isStandard">
-              <span v-if="result.totalCount <= 50">该项目的commit数量过少，只显示基本信息</span>
+              <span v-if="result.totalCount <= 50">该项目的 commit 数量过少，只显示基本信息</span>
               <span v-else>该项目为开源项目，只显示基本信息</span>
             </p>
             <p>
@@ -40,28 +40,28 @@
           </div>
         </div>
         <p class="exp" v-if="result.isStandard">
-          996指数：为0则不加班，值越大代表加班越严重，996工作制对应的值为100，负值说明工作非常轻松。
+          996 指数：为 0 则不加班，值越大代表加班越严重，996 工作制对应的值为 100，负值说明工作非常轻松。
           <a @click="scrollTo">具体可参考下方表格</a>
         </p>
       </div>
       <div class="content container">
         <div class="section">
           <div class="item">
-            <h2>按小时commit分布</h2>
+            <h2>按小时 commit 分布</h2>
             <bar-chart :data="hourResult" />
           </div>
           <div class="item" v-if="result.isStandard">
-            <h2>加班/工作commit占比（按小时）</h2>
+            <h2>加班/工作 commit 占比（按小时）</h2>
             <pie-chart :data="workHourRadio" />
           </div>
         </div>
         <div class="section">
           <div class="item">
-            <h2>按天commit分布</h2>
+            <h2>按天 commit 分布</h2>
             <bar-chart :data="weekResult" />
           </div>
           <div class="item" v-if="result.isStandard">
-            <h2>加班/工作commit占比（按天）</h2>
+            <h2>加班/工作 commit 占比（按天）</h2>
             <pie-chart :data="workWeekRadio" />
           </div>
         </div>

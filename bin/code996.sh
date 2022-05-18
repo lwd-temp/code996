@@ -126,14 +126,14 @@ vercel_url="https://code996.vercel.app/#/result?time=$result"
 gitee_url="https://hellodigua.gitee.io/code996/#/result?time=$result"
 
 echo
-echo -e "${NC}复制以下url以查看可视化分析结果："
+echo -e "${NC}复制以下url以查看可视化分析结果:"
 echo -e "${RED}$github_url"
 echo -e "${NC}"
-echo -e "${NC}若github访问过慢，也可以访问以下镜像链接："
-echo -e "${NC}vercel节点："
+echo -e "${NC}若 GitHub 访问过慢，也可以访问以下镜像链接:"
+echo -e "${NC}Vercel节点:"
 echo -e "${RED}$vercel_url"
 echo -e "${NC}"
-echo -e "${NC}gitee节点："
+echo -e "${NC}Gitee节点:"
 echo -e "${RED}$gitee_url"
 echo -e "${NC}"
 

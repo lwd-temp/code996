@@ -43,7 +43,7 @@ export function getResult() {
   return {
     // 工作类型模板
     workingType: `${_openingTime || '?'}${_closingTime || '?'}${workDayTypeValue || '?'}`,
-    workingTypeStr: `早${_openingTime || '?'}晚${_closingTime || '?'}一周${workDayTypeValue || '?'}天`,
+    workingTypeStr: `早 ${_openingTime || '?'} 晚 ${_closingTime || '?'} 一周 ${workDayTypeValue || '?'} 天`,
     openingTime,
     closingTime,
     workDayTypeValue,
