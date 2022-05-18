@@ -33,13 +33,11 @@
           <ul>
             <p>Mac 或 Linux 用户，在 Git 项目的根目录，执行以下命令：</p>
             <div class="overflow-x">
-              <pre>
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"</pre
-              >
+              <pre>/bin/bash -c "$(curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh)"</pre>
             </div>
             <p>
               Windows 用户，
-              <a href="https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh">下载该脚本</a>
+              <a href="https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh">下载该脚本</a>
               后，然后将该脚本移至要分析的 Git 项目目录，并执行以下命令：
             </p>
             <pre>sh code996.sh</pre>
@@ -80,8 +78,8 @@
           <div class="p1">其他Question</div>
           <p class="p2">Q：996 指数是什么？</p>
           <ul>
-            <li>996 指数是本项目定义的，用于反映项目加班情况的数据指标。</li>
-            <li>在对加班情况标准化之后，我们可以方便的对跨团队、跨公司项目的工作强度进行对比。</li>
+            <p>996 指数是本项目定义的，用于反映项目加班情况的数据指标。</p>
+            <p>在对加班情况标准化之后，我们可以方便的对跨团队、跨公司项目的工作强度进行对比。</p>
           </ul>
           <p class="p2">Q：什么情况下 code996 的分析结果不准确？</p>
           <ul>
@@ -92,9 +90,19 @@
             <li>跨国、跨时区开发的项目无法正确统计</li>
             <li>工作时间不固定的项目(如个人开源项目)也无法统计</li>
           </ul>
+          <p class="p2">Q：脚本遇到网络问题？</p>
+          <ul>
+            <li>Web端：备用镜像节点见最底部</li>
+            <li>
+              备用脚本地址：
+              <code>
+                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"
+              </code>
+            </li>
+          </ul>
           <p class="p2">Q：我有更好的 idea</p>
           <ul>
-            <li>任何想法和意见都欢迎交流，也欢迎 Fork 之后自行改造。</li>
+            <p>任何想法和意见都欢迎到 issue 区交流，也欢迎 Fork 之后自行改造。</p>
           </ul>
         </article>
       </div>
