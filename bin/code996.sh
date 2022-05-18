@@ -135,6 +135,6 @@ echo -e "${RED}$vercel_url"
 echo -e "${NC}"
 echo -e "${NC}gitee节点："
 echo -e "${RED}$gitee_url"
-echo -e "${NC}
+echo -e "${NC}"
 
 $open_url "$github_url"
