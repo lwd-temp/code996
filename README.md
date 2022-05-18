@@ -17,12 +17,12 @@ Mac 或 Linux 用户：
 **在 Git 项目的根目录**，执行以下命令：
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"
+/bin/bash -c "$(curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh)"
 ```
 
 Windows 用户：
 
-下载该脚本 `https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh`
+下载该脚本 `https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh`
 
 然后将该脚本移至要分析的 Git 项目目录，并执行以下命令：
 
@@ -46,7 +46,7 @@ sh code996.sh
 
 ## 它怎样工作
 
-1. 使用 git-log 对项目当前的分支进行查询，得到以小时汇总和以天汇总的 commit 统计结果
+1. 使用 git-log 对项目**当前的分支**进行查询，得到以小时汇总和以天汇总的 commit 统计结果
 2. 将本地脚本得到的查询结果转为 URL 参数，并打开 URL 到浏览器
 3. 从 URL 拿到数据，并使用一些规则处理，并将结果可视化展现
 
