@@ -4,7 +4,7 @@ code996 is an analytics tool that can be used to calculate the commit time distr
 
 Preview: https://hellodigua.github.io/code996/
 
-[简体中文](./README.md)
+English | [简体中文](./README.md)
 
 ## Usage
 
@@ -19,17 +19,17 @@ For Mac or Linux users.
 **In the root directory of your Git project**, run the following command.
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh)"
+/bin/bash -c "$(curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996_en.sh)"
 ```
 
 Windows users.
 
-Download the script ``https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh``
+Download the script `https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996_en.sh`
 
 Then move the script to the Git project directory you want to analyze, and execute the following command.
 
 ```sh
-sh code996.sh
+sh code996_en.sh
 ```
 
 ## Preview

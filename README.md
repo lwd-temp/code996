@@ -4,7 +4,7 @@ code996 是一个分析工具，它可以统计 Git 项目的 commit 时间分�
 
 Preview：https://hellodigua.github.io/code996/
 
-[English](./README-en_US.md)
+简体中文 | [English](./README-en_US.md)
 
 ## 用途
 
