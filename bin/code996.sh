@@ -98,7 +98,7 @@ echo -e "${RED}统计时间范围：$time_start 至 $time_end"
 for i in "${by_day_output[@]}"
     do
         echo
-        echo -e "${RED}一周七天 commit 分布"
+        echo -e "${NC}一周七天 commit 分布${RED}"
         echo -e "  总提交次数 星期\n$i"|column -t
         by_day_result=`echo "$i"|sed -E 's/^ +//g'|sed "s/ /_/g"|tr '\n' ','`
     done
@@ -107,7 +107,7 @@ for i in "${by_day_output[@]}"
 for i in "${by_hour_output[@]}"
     do
         echo
-        echo -e "${RED}24小时 commit 分布"
+        echo -e "${NC}24小时 commit 分布${RED}"
         echo -e "  总提交次数 小时\n$i"|column -t
         by_hour_result=`echo "$i"|sed -E 's/^ +//g'|sed "s/ /_/g"|tr '\n' ','`
     done
