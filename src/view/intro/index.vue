@@ -93,11 +93,11 @@
           <p class="p2">Q：脚本遇到网络问题？</p>
           <ul>
             <li>Web端：备用镜像节点见最底部</li>
-            <li>
+            <li class="overflow-x">
               备用脚本地址：
-              <code>
-                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"
-              </code>
+              <pre>
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"</pre
+              >
             </li>
           </ul>
           <p class="p2">Q：我有更好的 idea</p>
