@@ -96,8 +96,8 @@ for i in "${by_day_output[@]}"
     do
         echo
         # echo -e "${RED}By Day:"
-        echo -e "${RED}Weekly commit distribution"
-        echo -e "  statistics Weekly\n$i"|column -t
+        echo -e "${NC}Weekly commit distribution${RED}"
+        echo -e "  Statistics Weekly\n$i"|column -t
         by_day_result=`echo "$i"|sed -E 's/^ +//g'|sed "s/ /_/g"|tr '\n' ','`
     done
 
@@ -105,8 +105,8 @@ for i in "${by_day_output[@]}"
 for i in "${by_hour_output[@]}"
     do
         echo
-        echo -e "${RED}24 Hours commit distribution"
-        echo -e "  statistics Hours\n$i"|column -t
+        echo -e "${NC}24 Hours commit distribution${RED}"
+        echo -e "  Statistics Hours\n$i"|column -t
         by_hour_result=`echo "$i"|sed -E 's/^ +//g'|sed "s/ /_/g"|tr '\n' ','`
     done
 
@@ -126,6 +126,7 @@ gitee_url="https://hellodigua.gitee.io/code996/#/result?time=$result"
 echo
 echo -e "${NC}You can manually click the url below when you want to see the result if something goes wrong："
 echo -e "${RED}$github_url"
+echo -e "${NC}"
 echo -e "${NC}vercel server："
 echo -e "${RED}$vercel_url"
 echo -e "${NC}"
