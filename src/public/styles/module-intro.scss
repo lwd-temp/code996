@@ -44,6 +44,9 @@
     .item {
       display: flex;
       padding-bottom: 4em;
+      &:last-child {
+        padding-bottom: 0;
+      }
       .left {
         width: 120px;
         min-width: 120px;

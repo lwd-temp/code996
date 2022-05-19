@@ -1,6 +1,6 @@
 <template>
   <div class="result">
-    <div class="header">
+    <div class="top-bar">
       <div class="wrapper">
         <span class="button back" @click="goBack">返回</span>
         <h1>#CODE996 Result</h1>
@@ -75,7 +75,6 @@
         <p>请勿用于正式场合</p>
       </div>
     </div>
-    <common-footer />
   </div>
 </template>
 <script setup lang="ts">
@@ -85,7 +84,6 @@ import { router } from '../../router'
 import BarChart from './components/BarChart.vue'
 import PieChart from './components/PieChart.vue'
 import CompareTable from './components/CompareTable.vue'
-import CommonFooter from '../../public/components/CommonFooter.vue'
 import { getResult, getRoutesMeta } from './core'
 import { checkUrlQueryAndRedirect } from './core/url-helper'
 

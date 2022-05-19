@@ -43,6 +43,13 @@ body {
   margin: 0 auto;
 }
 
+.app {
+  height: 100%;
+  &-container {
+    min-height: 100%;
+  }
+}
+
 .footer {
   line-height: 2;
   background: #2a2a2a;
