@@ -92,17 +92,12 @@
           </ul>
           <p class="p2">Q：脚本遇到网络问题？</p>
           <ul>
-            <li>Web端：备用镜像节点见最底部</li>
             <li class="overflow-x">
               备用脚本地址：
               <pre>
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"</pre
               >
             </li>
-          </ul>
-          <p class="p2">Q：我有更好的 idea</p>
-          <ul>
-            <p>任何想法和意见都欢迎到 issue 区交流，也欢迎 Fork 之后自行改造。</p>
           </ul>
         </article>
       </div>

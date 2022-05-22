@@ -121,11 +121,9 @@ function getUn996Radio({ hourData, totalCount }: any) {
 /**
  * 校验数据
  * 1. 项目数据伪造
- * 2. 项目commit过少
- * 3. 项目commit分布不像正常工作时间
  */
 function checkDataIsRight(params: any) {
-  const { workHourPl, workWeekPl, overTimeRadio } = params
+  const { workHourPl, workWeekPl } = params
   let MSG_TYPE: string = ''
 
   const total1 = workHourPl[0].count + workHourPl[1].count
@@ -133,14 +131,6 @@ function checkDataIsRight(params: any) {
 
   if (total1 !== total2) {
     MSG_TYPE = 'commit_is_fake'
-  }
-
-  if (total1 < 100 || total2 < 100) {
-    MSG_TYPE = 'commit_is_low'
-  }
-
-  if (overTimeRadio > 65) {
-    MSG_TYPE = 'overTimeRadio_is_too_high'
   }
 
   return MSG_TYPE
