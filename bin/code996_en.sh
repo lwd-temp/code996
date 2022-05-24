@@ -116,7 +116,7 @@ by_day_result=`echo "$by_day_result"|sed -E 's/,$//g'`
 by_hour_result=`echo "$by_hour_result"|sed -E 's/,$//g'`
 
 
-result=$time_start"_"$time_end"&week="$by_day_result"&hour="$by_hour_result
+result=$time_start"_"$time_end"&week="$by_day_result"&hour="$by_hour_result"&lang=en"
 
 # default site
 github_url="https://hellodigua.github.io/code996/#/result?time=$result"
