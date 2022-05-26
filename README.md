@@ -107,8 +107,12 @@ sh code996.sh
 - 短时间内参加面试的前端开发者，可借助本书快速了解面试高频的技术问题和相关解答。
 - 前端面试官可参考本书的题型和题目，按岗位需求对候选人进行有梯度的考察。
 
-欢迎前端小伙伴们 star
+欢迎前端小伙伴们关注
 
 ## 使用许可
 
 本程序及其源码和编译产物附属 [Unlicense](LICENSE) 许可，其依赖的相关库和内容不做许可承诺，请参考他们的原始许可。
+
+[![license](https://img.shields.io/github/license/hellodigua/code996)]()
+[![](https://img.shields.io/jsdelivr/gh/hm/hellodigua/code996)]()
+[![views](https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/l2vhuyzttoxl2nx0wzl2)]()
