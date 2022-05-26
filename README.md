@@ -113,6 +113,6 @@ sh code996.sh
 
 本程序及其源码和编译产物附属 [Unlicense](LICENSE) 许可，其依赖的相关库和内容不做许可承诺，请参考他们的原始许可。
 
-[![license](https://img.shields.io/github/license/hellodigua/code996)]()
-[![](https://img.shields.io/jsdelivr/gh/hm/hellodigua/code996)]()
-[![views](https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/l2vhuyzttoxl2nx0wzl2)]()
+![license](https://img.shields.io/github/license/hellodigua/code996)
+![](https://img.shields.io/jsdelivr/gh/hm/hellodigua/code996)
+![views](https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/l2vhuyzttoxl2nx0wzl2)
