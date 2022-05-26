@@ -11,8 +11,10 @@
       <p>
         自豪的采用
         <a target="_blank" href="https://unlicense.org/">Unlicense</a>
-        协议 | 源码：
-        <a target="_blank" href="https://github.com/hellodigua/code996">Github</a>
+        协议 |&nbsp;
+        <a target="_blank" href="https://github.com/hellodigua/code996">
+          <img src="https://img.shields.io/github/stars/hellodigua/code996?style=social" alt="" />
+        </a>
       </p>
       <p>
         Inspiration comes from ❤️

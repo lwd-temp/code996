@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
 
-  .header {
+  .top-bar {
     padding: 40px 0;
     width: 100%;
     background: #2a2a2a;
@@ -16,7 +16,6 @@
       display: inline-block;
       font-size: 1em;
       cursor: pointer;
-      background-color: #212121;
       padding: 10px 20px;
       background-color: #444;
       color: #fff;
@@ -179,7 +178,7 @@
 
 @media screen and (max-width: 700px) {
   .result {
-    .header {
+    .top-bar {
       padding: 30px 0;
       .wrapper {
         flex-direction: column;

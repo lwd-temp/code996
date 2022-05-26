@@ -102,12 +102,10 @@
         </article>
       </div>
     </div>
-    <common-footer />
   </div>
 </template>
 <script setup lang="ts">
 import { router } from '../../router'
-import CommonFooter from '../../public/components/CommonFooter.vue'
 
 const previewDemo = () => {
   router.push({
