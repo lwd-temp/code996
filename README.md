@@ -6,12 +6,6 @@ Preview：https://hellodigua.github.io/code996/
 
 简体中文 | [English](./README-en_US.md)
 
-## 用途
-
-- 分析 Git 项目的 commit 提交时间数据
-- 入职新公司后了解项目是否存在 996 现象
-- 在上班的摸鱼时光找点乐子
-
 ## 如何使用
 
 Mac 或 Linux 用户：
@@ -99,20 +93,12 @@ sh code996.sh
 
 [digua](https://github.com/hellodigua) | [YLinXin](https://github.com/YLinXin) | [Nekotora](https://flag.moe/) | [Xuemuyang](https://github.com/Xuemuyang)
 
-## 友情链接
-
-我们还写了一份前端面试题小册 [剑指前端 Offer](https://github.com/HZFE/awesome-interview)，它适合以下人群阅读：
-
-- 有意冲刺互联网大厂的前端开发者，可参考本书题目和答案提纲，自主深入学习，查漏补缺。
-- 短时间内参加面试的前端开发者，可借助本书快速了解面试高频的技术问题和相关解答。
-- 前端面试官可参考本书的题型和题目，按岗位需求对候选人进行有梯度的考察。
-
-欢迎前端小伙伴们关注
+站点主题及部分灵感来自 [996.ICU](https://github.com/996icu/996.ICU)，向反 996 的先驱者们致敬。
 
 ## 使用许可
 
 本程序及其源码和编译产物附属 [Unlicense](LICENSE) 许可，其依赖的相关库和内容不做许可承诺，请参考他们的原始许可。
 
-[![license](https://img.shields.io/github/license/hellodigua/code996)]()
-[![](https://img.shields.io/jsdelivr/gh/hm/hellodigua/code996)]()
-[![views](https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/l2vhuyzttoxl2nx0wzl2)]()
+![license](https://img.shields.io/github/license/hellodigua/code996)
+![](https://img.shields.io/jsdelivr/gh/hm/hellodigua/code996)
+![views](https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/l2vhuyzttoxl2nx0wzl2)
