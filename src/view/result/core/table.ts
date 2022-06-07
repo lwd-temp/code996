@@ -12,10 +12,9 @@ export function getTableCore() {
   const closingTimeValue = Number(closingTime?.time)
 
   const tableConfig = [
-    { label: '日均考勤打卡时长', key: 'attendance', unit: 'h' },
-    { label: '日均有效工作时间', key: 'codeTime', unit: 'h' },
-    { label: '每周实际工时', key: 'weekTime', unit: 'h' },
-    { label: '预计每周加班时长', key: 'overtime', unit: 'h' },
+    { label: '日均工作时长', key: 'codeTime', unit: 'h' },
+    { label: '每周工作时长', key: 'weekTime', unit: 'h' },
+    { label: '每周加班时长', key: 'overtime', unit: 'h' },
     { label: '加班时间占比', key: 'overTimeRadio', unit: '%' },
     { label: '996指数', key: 'index996', unit: '' },
   ]
@@ -23,7 +22,7 @@ export function getTableCore() {
   const attendance = closingTimeValue - openingTimeValue
 
   /**
-   * 日均有效工作时间
+   * 日均工作时长
    * 如果下班时间小于19点，那么默认只休息中午1.5小时
    * 否则加晚上加班餐1小时，按2.5小时算
    */
