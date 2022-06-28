@@ -13,7 +13,7 @@ For Mac or Linux users.
 **In the root directory of your Git project**, run the following command.
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996_en.sh)"
+curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996_en.sh | bash
 ```
 
 Windows users.
