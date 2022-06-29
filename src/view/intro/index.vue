@@ -19,7 +19,7 @@
           <ul>
             <p>Mac 或 Linux 用户，在 Git 项目的根目录，执行以下命令：</p>
             <div class="overflow-x">
-              <pre>/bin/bash -c "$(curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh)"</pre>
+              <pre>curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | bash</pre>
             </div>
             <p>
               Windows 用户，
@@ -80,9 +80,7 @@
           <ul>
             <li class="overflow-x">
               备用脚本地址：
-              <pre>
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh)"</pre
-              >
+              <pre>curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh | bash</pre>
             </li>
           </ul>
         </article>
