@@ -13,7 +13,7 @@ Mac 或 Linux 用户：
 **在 Git 项目的根目录**，执行以下命令：
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh)"
+curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | bash
 ```
 
 Windows 用户：
