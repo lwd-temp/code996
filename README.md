@@ -92,6 +92,8 @@ sh code996.sh
 
 [digua](https://github.com/hellodigua) | [YLinXin](https://github.com/YLinXin) | [Nekotora](https://flag.moe/) | [Xuemuyang](https://github.com/Xuemuyang)
 
+交流 QQ 群：916399545
+
 站点主题及灵感来自 [996.ICU](https://github.com/996icu/996.ICU)。
 
 ## 友情链接
