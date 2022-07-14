@@ -7,7 +7,33 @@ Preview：https://hellodigua.github.io/code996/
 简体中文 | [English](./README-en_US.md)
 
 ## 如何使用
+### PowerShell
+请使用 PowerShell 7 或更高版本，不支持 Windows PowerShell 及 PowerShell 6！
 
+[在 Windows、Linux 和 macOS 上安装 PowerShell](https://docs.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell "PowerShell 安装说明")
+1. 下载脚本
+    - 手动下载 [https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1](https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1)
+
+    - 自动下载：
+        ``` pwsh
+        iwr https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1 -OutFile code996.ps1
+        ```
+
+2. 运行脚本
+    
+    **请将 `/path/to/code996.ps1` 替换为 `code996.ps1` 文件的路径！**
+
+    **在 Git 项目根目录**，执行：
+    ```pwsh
+    /path/to/code996.ps1
+    ```
+    若需帮助可以执行：
+    ```pwsh
+    /path/to/code996.ps1 -?
+    ```
+
+
+### Bash 和 Git Bash
 Mac 或 Linux 用户：
 
 **在 Git 项目的根目录**，执行以下命令：
@@ -18,13 +44,14 @@ curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | ba
 
 Windows 用户：
 
-下载该脚本 `https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh`
+下载该脚本 [https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh](https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh)
 
 然后将该脚本移至要分析的 Git 项目目录，并执行以下命令：
 
 ```sh
 sh code996.sh
 ```
+
 
 ## 预览
 
