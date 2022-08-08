@@ -93,19 +93,7 @@ iwr https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1 -OutFile (
 
 [digua](https://github.com/hellodigua) | [YLinXin](https://github.com/YLinXin) | [Nekotora](https://flag.moe/) | [Xuemuyang](https://github.com/Xuemuyang)
 
-交流 QQ 群：916399545
-
 站点主题及灵感来自 [996.ICU](https://github.com/996icu/996.ICU)。
-
-## 友情链接
-
-我们还写了一份前端面试题小册 [剑指前端 Offer](https://github.com/HZFE/awesome-interview)，它适合以下人群阅读：
-
-- 有意冲刺互联网大厂的前端开发者，可参考本书题目和答案提纲，自主深入学习，查漏补缺。
-- 短时间内参加面试的前端开发者，可借助本书快速了解面试高频的技术问题和相关解答。
-- 前端面试官可参考本书的题型和题目，按岗位需求对候选人进行有梯度的考察。
-
-欢迎前端小伙伴们关注
 
 ## 使用许可
 
