@@ -17,16 +17,10 @@
         <article class="markdown-body">
           <div class="p1">如何使用</div>
           <ul>
-            <p>Mac 或 Linux 用户，在 Git 项目的根目录，执行以下命令：</p>
+            <p>在 Git 项目的根目录，执行以下命令：</p>
             <div class="overflow-x">
               <pre>curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | bash</pre>
             </div>
-            <p>
-              Windows 用户，
-              <a href="https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh">下载该脚本</a>
-              后，然后将该脚本移至要分析的 Git 项目目录，并执行以下命令：
-            </p>
-            <pre>sh code996.sh</pre>
           </ul>
         </article>
       </div>
@@ -61,7 +55,7 @@
           <div class="icon-mark">Q</div>
         </div>
         <article class="markdown-body">
-          <div class="p1">其他Question</div>
+          <div class="p1">其他问题</div>
           <p class="p2">Q：996 指数是什么？</p>
           <ul>
             <p>996 指数是本项目定义的，用于反映项目加班情况的数据指标。</p>
@@ -76,8 +70,13 @@
             <li>跨国、跨时区开发的项目无法正确统计</li>
             <li>工作时间不固定的项目(如个人开源项目)也无法统计</li>
           </ul>
-          <p class="p2">Q：脚本遇到网络问题？</p>
+          <p class="p2">Q：脚本遇到问题？</p>
           <ul>
+            <li>
+              无法使用 curl 的 Windows 用户， 可下载
+              <a href="https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh">该脚本</a>
+              并使用
+            </li>
             <li class="overflow-x">
               备用脚本地址：
               <pre>curl -fsSL https://raw.githubusercontent.com/hellodigua/code996/master/bin/code996.sh | bash</pre>
