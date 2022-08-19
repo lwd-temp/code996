@@ -133,8 +133,5 @@ echo -e "${NC}若 GitHub 访问过慢，也可以访问以下镜像链接:"
 echo -e "${NC}Vercel节点:"
 echo -e "${RED}$vercel_url"
 echo -e "${NC}"
-echo -e "${NC}Gitee节点:"
-echo -e "${RED}$gitee_url"
-echo -e "${NC}"
 
 $open_url "$github_url"
