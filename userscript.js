@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  work and life balance!
 // @author       wanghsinche
-// @match        https://*gitlab*/*
+// @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gitlab.com
 // @grant        none
 // @run-at document-end
@@ -14,7 +14,7 @@
     'use strict';
 
     const meta = document.body.dataset;
-    const projectId = meta.projectId;
+    const projectId = meta?meta.projectId:null;
     const commitURL = `/api/v4/projects/${projectId}/repository/commits`
     const visualazation = 'https://hellodigua.github.io/code996/#/result'
     const mergeFlag = "Merge branch"
@@ -148,10 +148,15 @@
 
 
     function main() {
+        if (!projectId){
+            console.log('it isn\'t a gitlab project page, abort')
+            return
+        }
+        
         const targetNode = document.getElementsByClassName('nav-block')[0];
 
         // Options for the observer (which mutations to observe)
-        const config = { attributes: true, childList: true, subtree: true };
+        const config = { attributes: false, childList: true, subtree: true };
 
         // Callback function to execute when mutations are observed
         const callback = (mutationList, observer) => {
@@ -175,7 +180,8 @@
         observer.observe(targetNode, config);
 
     }
-
+    
+    // launch the program
     main()
 
 
