@@ -86,9 +86,9 @@
             am[hour] = (am[hour] || 0) + 1
             return am
         }, {})
-
-        const formattedStartTime = `${startTime.getFullYear()}-${startTime.getMonth()}-${startTime.getDate()}`
-        const formattedEndTime = `${endTime.getFullYear()}-${endTime.getMonth()}-${endTime.getDate()}`
+        // month start from 0
+        const formattedStartTime = `${startTime.getFullYear()}-${startTime.getMonth()+1}-${startTime.getDate()}`
+        const formattedEndTime = `${endTime.getFullYear()}-${endTime.getMonth()+1}-${endTime.getDate()}`
 
         const formattedDayResult = Object.entries(byDayResult).map(([day, freq]) => `${freq}_${day}`).join(',')
         const formattedHourResult = Object.entries(byHourResult).map(([hour, freq]) => `${freq}_${hour}`).join(',')
