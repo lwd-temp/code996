@@ -14,8 +14,19 @@ Preview：https://hellodigua.github.io/code996/
 curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | bash
 ```
 
+gitlab项目可以使用**浏览器用户脚本** `userscript.js`进行在线分析
+
+
 <details>
 <summary>其他环境脚本请展开查看</summary>
+
+### Gitlab线上版本
+- 安装浏览器插件 tampermonkey https://www.tampermonkey.net/
+- 拷贝 userscript.js 文件到 tampermonkey 
+- 打开需要分析的 gitlab 项目页面，点击按钮可得到分析结果
+
+<img width="760" alt="image" src="https://user-images.githubusercontent.com/14119632/191984080-8f6b693f-824b-4271-aa43-2511fa57d365.png">
+
 
 ### PowerShell 版本
 
