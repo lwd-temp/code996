@@ -6,41 +6,9 @@ Preview：https://hellodigua.github.io/code996/
 
 简体中文 | [English](./README-en_US.md)
 
-## 如何使用
-
-**在 Git 项目的根目录**，执行以下脚本：
-
-```sh
-curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | bash
-```
-
-gitlab项目可以使用**浏览器用户脚本** `userscript.js`进行在线分析
-
-
-<details>
-<summary>其他环境脚本请展开查看</summary>
-
-### Gitlab线上版本
-- 安装浏览器插件 tampermonkey https://www.tampermonkey.net/
-- 拷贝 userscript.js 文件到 tampermonkey 
-- 打开需要分析的 gitlab 项目页面，点击按钮可得到分析结果
-
-<img width="760" alt="image" src="https://user-images.githubusercontent.com/14119632/191984080-8f6b693f-824b-4271-aa43-2511fa57d365.png">
-
-
-### PowerShell 版本
-
-> 请使用 PowerShell 7 或更高版本
-
-```sh
-iwr https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1 -OutFile ([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'code996.ps1')); & ([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'code996.ps1')); ri ([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'code996.ps1'))
-```
-
-</details>
-
 ## 预览
 
-分析项目的基本情况：
+分析 Git 项目的基本情况：
 
 ![basic](./public/preview/1.png)
 
@@ -51,6 +19,37 @@ iwr https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1 -OutFile (
 对比项目工作时间类型：
 
 ![reference](./public/preview/3.png)
+
+## 如何使用
+
+**本地分析**：在 Git 项目的根目录，执行以下脚本：
+
+```sh
+curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | bash
+```
+
+**在线分析**：gitlab 项目可以使用浏览器用户脚本 `userscript.js` 进行在线分析
+
+<details>
+<summary>具体使用方法请展开查看</summary>
+
+### Gitlab 线上版本
+
+- 安装浏览器插件 tampermonkey https://www.tampermonkey.net/
+- 拷贝 userscript.js 文件到 tampermonkey（或选择[在线安装](https://greasyfork.org/en/scripts/452007-gitlab-996-index-statistic)）
+- 打开需要分析的 gitlab 项目页面，点击按钮可得到分析结果
+
+<img width="760" alt="image" src="https://user-images.githubusercontent.com/14119632/191984080-8f6b693f-824b-4271-aa43-2511fa57d365.png">
+
+### PowerShell 版本
+
+> 请使用 PowerShell 7 或更高版本
+
+```sh
+iwr https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1 -OutFile ([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'code996.ps1')); & ([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'code996.ps1')); ri ([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'code996.ps1'))
+```
+
+</details>
 
 ## 它怎样工作
 
@@ -95,7 +94,7 @@ iwr https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.ps1 -OutFile (
 
 ## 贡献者
 
-[digua](https://github.com/hellodigua) | [YLinXin](https://github.com/YLinXin) | [Nekotora](https://flag.moe/) | [Xuemuyang](https://github.com/Xuemuyang)
+感谢 [YLinXin](https://github.com/YLinXin) | [Nekotora](https://flag.moe/) | [Xuemuyang](https://github.com/Xuemuyang) 等小伙伴对本项目的贡献，希望这个项目能帮助到不希望加班的开发者们。
 
 站点主题及灵感来自 [996.ICU](https://github.com/996icu/996.ICU)。
 

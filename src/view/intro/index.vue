@@ -17,10 +17,14 @@
         <article class="markdown-body">
           <div class="p1">如何使用</div>
           <ul>
-            <p>在 Git 项目的根目录，执行以下命令：</p>
+            <p>本地分析：在 Git 项目的根目录，执行以下命令：</p>
             <div class="overflow-x">
               <pre>curl -fsSL https://fastly.jsdelivr.net/gh/hellodigua/code996/bin/code996.sh | bash</pre>
             </div>
+            <p>
+              在线分析 Gitlab 项目，可以使用该
+              <a href="https://greasyfork.org/en/scripts/452007-gitlab-996-index-statistic" target="_blank">油猴脚本</a>
+            </p>
           </ul>
         </article>
       </div>
@@ -40,12 +44,24 @@
           <div class="icon-mark">@</div>
         </div>
         <article class="markdown-body">
+          <div class="p1">它有什么用</div>
+          <p>它可以帮助你分辨 996 的公司和行为并远离它，具体包括：</p>
+          <p>1. 在入职的当天即可知道新公司的加班情况如何</p>
+          <p>2. 揪出公司里的卷王</p>
+          <p>3. 对比不同项目的加班强度</p>
+        </article>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="icon-mark">@</div>
+        </div>
+        <article class="markdown-body">
           <div class="p1">它安全吗</div>
           <p>1. 脚本端和 Web 端均不会收集任何数据</p>
           <p>2. 除分析的起始时间、commit结果等通用数据外，URL 本身不泄露如项目名等敏感信息</p>
           <p>
             3. 所有代码均已开源到
-            <a href="https://github.com/hellodigua/code996" target="_blank">GitHub</a>
+            <a href="https://github.com/hellodigua/code996">GitHub</a>
             ，接受社区监督
           </p>
         </article>
