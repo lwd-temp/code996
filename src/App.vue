@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <github-corner />
     <div class="app-container">
       <router-view></router-view>
     </div>
@@ -9,6 +10,7 @@
 
 <script setup lang="ts">
 import CommonFooter from './public/components/CommonFooter.vue'
+import GithubCorner from './public/components/GithubCorner.vue'
 </script>
 
 <style lang="scss">
