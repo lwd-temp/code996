@@ -5,8 +5,8 @@ Help()
    # Display Help
    echo "Hey please give me three param like this!"
    echo
-   echo "Syntax: bash $0 [2021-01-01] [2022-04-04] [author]"
-   echo "example: bash code996.sh 2021-01-01 2022-12-31 digua"
+   echo "Syntax: bash $0 [2022-01-01] [2022-04-04] [author]"
+   echo "example: bash code996.sh 2022-01-01 2022-12-31 digua"
    echo "options:"
    echo "1st param     Calculate from time."
    echo "2nd param     Calculate to time."
@@ -61,7 +61,7 @@ fi
 
 if [ -z $1 ]
     then
-        time_start="2021-01-01"
+        time_start="2022-01-01"
 fi
 
 time_end=$2
