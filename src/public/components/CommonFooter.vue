@@ -34,11 +34,6 @@ const mirrorList = [
     label: 'GitHub',
   },
   {
-    host: 'gitee.io/',
-    url: `https://hellodigua.gitee.io/code996/${hash}`,
-    label: 'Gitee',
-  },
-  {
     host: 'code996.vercel.app',
     url: `https://code996.vercel.app/${hash}`,
     label: 'Vercel',

@@ -123,7 +123,6 @@ result=$time_start"_"$time_end"&week="$by_day_result"&hour="$by_hour_result
 # url
 github_url="https://hellodigua.github.io/code996/#/result?time=$result"
 vercel_url="https://code996.vercel.app/#/result?time=$result"
-gitee_url="https://hellodigua.gitee.io/code996/#/result?time=$result"
 
 echo
 echo -e "${NC}复制以下url以查看可视化分析结果:"

@@ -61,7 +61,6 @@ if ($PSVersionTable.PSVersion.Major -lt 7) {
         # url
         $GithubUrl = "https://hellodigua.github.io/code996/#/result?time=$result"
         $VercelUrl = "https://code996.vercel.app/#/result?time=$result"
-        $GiteeUrl = "https://hellodigua.gitee.io/code996/#/result?time=$result"
 
 
         Write-Host "复制以下 URL 以查看可视化分析结果："
@@ -70,9 +69,6 @@ if ($PSVersionTable.PSVersion.Major -lt 7) {
         Write-Host "也可以访问以下镜像站点链接："
         Write-Host "GitHub Pages:"
         Write-Host "$GitHubUrl"
-        Write-Host ""
-        Write-Host "Gitee:"
-        Write-Host "$GiteeUrl"
         Write-Host ""
 
         Start-Process $VercelUrl
